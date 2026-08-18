@@ -33,7 +33,7 @@
     --block:clamp(56px, 7vw, 104px);
   }
   *,*::before,*::after{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip}
   body{
     margin:0;
     background:var(--nude);
@@ -123,7 +123,7 @@
   }
 
   /* Héro */
-  .hero{position:relative;padding:clamp(40px,5vw,76px) 24px clamp(48px,6vw,88px);text-align:center}
+  .hero{position:relative;overflow-x:clip;padding:clamp(40px,5vw,76px) 24px clamp(48px,6vw,88px);text-align:center}
   .hero-blob{
     position:absolute;top:6%;right:-6%;width:34vw;max-width:420px;aspect-ratio:1/1.4;
     border-radius:60% 40% 55% 45% / 45% 55% 45% 55%;
