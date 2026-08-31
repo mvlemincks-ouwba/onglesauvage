@@ -251,15 +251,11 @@
     color:var(--dusty);border-bottom:1px solid rgba(143,166,141,.5);padding-bottom:3px;
   }
   .gallery-head a:hover{color:var(--forest);border-color:var(--forest)}
-  .gallery-grid{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:16px;margin-top:clamp(24px,3vw,42px);
+  .gallery-rail .arch{
+    flex:0 0 clamp(208px,62vw,268px);scroll-snap-align:start;aspect-ratio:3/4;
   }
-  .gallery-grid .arch{aspect-ratio:3/4}
   @media (max-width:600px){
-    /* Deux colonnes plutôt qu'une : la galerie reste parcourable au pouce. */
-    .gallery-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-    .gallery-grid .arch{border-radius:999px 999px 18px 18px}
+    .gallery-rail .arch{border-radius:999px 999px 18px 18px}
     .arch-label{font-size:10px;letter-spacing:.1em;padding:6px 11px;bottom:9px}
   }
 
@@ -330,14 +326,14 @@
   .reviews-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:14px}
   .reviews-head h2{font-size:clamp(30px,4.4vw,56px);text-transform:uppercase;letter-spacing:.05em;color:var(--forest)}
   .reviews-score{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(46,77,52,.75)}
-  /* Carrousel d'avis */
-  .reviews-rail{
+  /* Carrousels (galerie et avis) */
+  .rail-scroll{
     display:flex;gap:16px;margin-top:clamp(24px,3vw,38px);
     overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
     padding:2px 0 10px;-webkit-overflow-scrolling:touch;
     scrollbar-width:none;-ms-overflow-style:none;
   }
-  .reviews-rail::-webkit-scrollbar{display:none}
+  .rail-scroll::-webkit-scrollbar{display:none}
   .review{
     flex:0 0 clamp(252px,78vw,320px);scroll-snap-align:start;
     background:var(--cream);border-radius:160px 160px 24px 24px;
@@ -371,7 +367,7 @@
     text-transform:uppercase;letter-spacing:.14em;color:var(--forest);
   }
   .review-service{margin-top:3px;font-size:12px;letter-spacing:.1em;color:rgba(51,64,47,.5)}
-  @media (prefers-reduced-motion:reduce){.reviews-rail{scroll-behavior:auto}}
+  @media (prefers-reduced-motion:reduce){.rail-scroll{scroll-behavior:auto}}
 
   /* FAQ */
   .faq .shell{max-width:840px}
@@ -539,7 +535,7 @@
         <h2>Mes réalisations</h2>
         <a href="https://www.instagram.com/ongle_sauvage/" target="_blank" rel="noopener">Plus de photos sur Instagram</a>
       </div>
-      <div class="gallery-grid">
+      <div class="gallery-rail rail-scroll" id="galerieRail" tabindex="0" role="group" aria-label="Mes réalisations, défilement horizontal">
         <div class="arch">
           <img src="assets/nailart-bleu-dore.jpg" alt="Nail art bleu nuit pailleté et doré chromé, orné de strass" loading="lazy">
           <div class="arch-label">Bleu nuit &amp; or</div>
@@ -603,6 +599,13 @@
         <div class="arch">
           <img src="assets/pedicure-zebre.jpg" alt="Pédicure zébrée noir et blanc rehaussée de dorures" loading="lazy">
           <div class="arch-label">Pédicure</div>
+        </div>
+      </div>
+      <div class="rail-foot">
+        <div class="rail-hint">16 réalisations · faites défiler</div>
+        <div class="rail-nav">
+          <button class="rail-btn" type="button" data-rail="prev" data-target="galerieRail" aria-label="Réalisations précédentes">&#8592;</button>
+          <button class="rail-btn" type="button" data-rail="next" data-target="galerieRail" aria-label="Réalisations suivantes">&#8594;</button>
         </div>
       </div>
     </div>
@@ -697,7 +700,7 @@
         <div class="reviews-score">★ <span data-avis-rating>5,0</span> sur <span data-avis-count>15</span> avis Booksy</div>
       </div>
       <!-- avis:start — bloc régénéré par .github/workflows/avis-booksy.yml, ne pas éditer à la main -->
-      <div class="reviews-rail" id="reviewsRail" tabindex="0" role="group" aria-label="Avis clientes, défilement horizontal">
+      <div class="reviews-rail rail-scroll" id="reviewsRail" tabindex="0" role="group" aria-label="Avis clientes, défilement horizontal">
         <article class="review">
           <div class="quote">&ldquo;</div>
           <p>J’ai adoré ! Je recommande à fond !😍</p>
@@ -760,8 +763,8 @@
       <div class="rail-foot">
         <div class="rail-hint">Faites défiler · <a href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets#reviews" target="_blank" rel="noopener">les <span data-avis-count>15</span> avis sur Booksy ↗</a></div>
         <div class="rail-nav">
-          <button class="rail-btn" type="button" data-rail="prev" aria-label="Avis précédents">&#8592;</button>
-          <button class="rail-btn" type="button" data-rail="next" aria-label="Avis suivants">&#8594;</button>
+          <button class="rail-btn" type="button" data-rail="prev" data-target="reviewsRail" aria-label="Avis précédents">&#8592;</button>
+          <button class="rail-btn" type="button" data-rail="next" data-target="reviewsRail" aria-label="Avis suivants">&#8594;</button>
         </div>
       </div>
     </div>
@@ -859,48 +862,54 @@
 </script>
 
 <script>
+  // Carrousels : galerie et avis. Chaque rail est piloté par les boutons
+  // qui portent data-target="<id du rail>".
   (function(){
-    var rail = document.getElementById('reviewsRail');
-    if(!rail) return;
-    var prev = document.querySelector('[data-rail="prev"]');
-    var next = document.querySelector('[data-rail="next"]');
-    var idx = 0, lock = false, lockT;
+    function initRail(rail){
+      var prev = document.querySelector('[data-rail="prev"][data-target="' + rail.id + '"]');
+      var next = document.querySelector('[data-rail="next"][data-target="' + rail.id + '"]');
+      if(!prev || !next) return;
+      var idx = 0, lock = false, lockT;
 
-    function step(){
-      var card = rail.querySelector('.review');
-      return card ? card.getBoundingClientRect().width + 16 : rail.clientWidth;
-    }
-    function maxIdx(){
-      return Math.max(0, Math.ceil((rail.scrollWidth - rail.clientWidth) / step()));
-    }
-    function sync(){
-      var max = rail.scrollWidth - rail.clientWidth - 2;
-      prev.disabled = rail.scrollLeft <= 2;
-      next.disabled = rail.scrollLeft >= max;
-    }
-    function go(dir){
-      idx = Math.max(0, Math.min(maxIdx(), idx + dir));
-      lock = true;
-      clearTimeout(lockT);
-      lockT = setTimeout(function(){ lock = false; }, 600);
-      rail.scrollTo({left: idx * step(), behavior: 'smooth'});
+      function step(){
+        var carte = rail.firstElementChild;
+        return carte ? carte.getBoundingClientRect().width + 16 : rail.clientWidth;
+      }
+      function maxIdx(){
+        return Math.max(0, Math.ceil((rail.scrollWidth - rail.clientWidth) / step()));
+      }
+      function sync(){
+        var max = rail.scrollWidth - rail.clientWidth - 2;
+        prev.disabled = rail.scrollLeft <= 2;
+        next.disabled = rail.scrollLeft >= max;
+      }
+      function go(dir){
+        idx = Math.max(0, Math.min(maxIdx(), idx + dir));
+        lock = true;
+        clearTimeout(lockT);
+        lockT = setTimeout(function(){ lock = false; }, 600);
+        rail.scrollTo({left: idx * step(), behavior: 'smooth'});
+      }
+
+      prev.addEventListener('click', function(){ go(-1); });
+      next.addEventListener('click', function(){ go(1); });
+      rail.addEventListener('scroll', function(){
+        sync();
+        if(!lock){ idx = Math.round(rail.scrollLeft / step()); }
+      }, {passive:true});
+      window.addEventListener('resize', function(){
+        idx = Math.round(rail.scrollLeft / step());
+        sync();
+      });
+      rail.addEventListener('keydown', function(e){
+        if(e.key === 'ArrowRight'){ e.preventDefault(); go(1); }
+        if(e.key === 'ArrowLeft'){ e.preventDefault(); go(-1); }
+      });
+      sync();
     }
 
-    prev.addEventListener('click', function(){ go(-1); });
-    next.addEventListener('click', function(){ go(1); });
-    rail.addEventListener('scroll', function(){
-      sync();
-      if(!lock){ idx = Math.round(rail.scrollLeft / step()); }
-    }, {passive:true});
-    window.addEventListener('resize', function(){
-      idx = Math.round(rail.scrollLeft / step());
-      sync();
-    });
-    rail.addEventListener('keydown', function(e){
-      if(e.key === 'ArrowRight'){ e.preventDefault(); go(1); }
-      if(e.key === 'ArrowLeft'){ e.preventDefault(); go(-1); }
-    });
-    sync();
+    var rails = document.querySelectorAll('.rail-scroll');
+    for(var i = 0; i < rails.length; i++){ initRail(rails[i]); }
   })();
 </script>
 
