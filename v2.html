@@ -370,6 +370,20 @@
     text-transform:uppercase;letter-spacing:.14em;color:var(--forest);
   }
   .review-service{margin-top:3px;font-size:12px;letter-spacing:.1em;color:rgba(51,64,47,.5)}
+  /* Retour en haut de page */
+  .to-top{
+    position:fixed;right:clamp(14px,2.5vw,26px);bottom:clamp(14px,2.5vw,26px);z-index:40;
+    width:50px;height:50px;border-radius:999px;
+    display:grid;place-items:center;text-decoration:none;
+    background:var(--sage);color:#fff;font-size:20px;line-height:1;
+    box-shadow:0 6px 20px rgba(46,77,52,.22);
+    opacity:0;transform:translateY(10px);pointer-events:none;
+    transition:opacity .25s, transform .25s, background .18s;
+  }
+  .to-top.visible{opacity:1;transform:none;pointer-events:auto}
+  .to-top:hover{background:var(--forest);color:#fff}
+  @media (max-width:560px){.to-top{width:44px;height:44px;font-size:18px}}
+
   @media (prefers-reduced-motion:reduce){.rail-scroll{scroll-behavior:auto}}
 
   /* FAQ */
@@ -469,7 +483,7 @@
       <h1>Ongle<br>Sauvage</h1>
       <p class="script-lead">le nail art qui vous ressemble</p>
       <div class="hero-tag">Nail art · Gel · Gel X · Soin</div>
-      <p class="lede">Créations uniques, dessinées à la main ongle&nbsp;par&nbsp;ongle. Et toutes les poses classiques.</p>
+      <p class="lede">Créations uniques, dessinées à la main ongle&nbsp;par&nbsp;ongle.</p>
       <p class="hero-place">Castets et Castillon · Sud-Gironde</p>
       <div class="btn-row">
         <a class="btn btn-sage" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener">Réserver sur Booksy</a>
@@ -812,6 +826,8 @@
   </section>
 </main>
 
+<a class="to-top" href="#top" aria-label="Remonter en haut de la page">&#8593;</a>
+
 <footer class="footer">
   <div class="shell">
     <div class="footer-grid">
@@ -922,6 +938,25 @@
 
     var rails = document.querySelectorAll('.rail-scroll');
     for(var i = 0; i < rails.length; i++){ initRail(rails[i]); }
+  })();
+
+  // Le bouton de retour en haut apparaît une fois la page bien entamée.
+  (function(){
+    var bouton = document.querySelector('.to-top');
+    if(!bouton) return;
+    function maj(){
+      var seuil = window.innerHeight * 1.2;
+      bouton.classList.toggle('visible', window.scrollY > seuil);
+    }
+    window.addEventListener('scroll', maj, {passive:true});
+    window.addEventListener('resize', maj);
+    // L'ancre #top sert de secours sans JavaScript, mais elle s'arrête sous la
+    // barre collante : on remonte plutôt franchement à zéro.
+    bouton.addEventListener('click', function(e){
+      e.preventDefault();
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+    maj();
   })();
 </script>
 
