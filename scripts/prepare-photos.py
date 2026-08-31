@@ -16,6 +16,11 @@ Ce qu'il fait pour chaque image :
 Usage :
     python3 scripts/prepare-photos.py source.jpeg=assets/nom-final.jpg [...]
     python3 scripts/prepare-photos.py --max-cote 1600 --qualite 80 src=dest
+    python3 scripts/prepare-photos.py --crop 0.08,0.16,0.74,0.74 src=dest
+
+L'option --crop recadre avant le redimensionnement, en fractions de l'image
+d'origine (x,y,largeur,hauteur, entre 0 et 1). Elle sert à zoomer sur le
+sujet quand la photo laisse trop de vide autour — utile pour les vignettes.
 
 Exemple :
     python3 scripts/prepare-photos.py \\
@@ -46,7 +51,18 @@ def gps_present(image):
     return 0x8825 in exif
 
 
-def prepare(source, destination, max_cote=MAX_COTE, qualite=QUALITE):
+def boite_de_recadrage(taille, crop):
+    """Convertit un recadrage exprimé en fractions en pixels."""
+    x, y, largeur, hauteur = crop
+    L, H = taille
+    gauche = max(0, min(L - 1, int(round(x * L))))
+    haut = max(0, min(H - 1, int(round(y * H))))
+    droite = max(gauche + 1, min(L, int(round((x + largeur) * L))))
+    bas = max(haut + 1, min(H, int(round((y + hauteur) * H))))
+    return (gauche, haut, droite, bas)
+
+
+def prepare(source, destination, max_cote=MAX_COTE, qualite=QUALITE, crop=None):
     poids_avant = os.path.getsize(source)
     with Image.open(source) as image:
         gps = gps_present(image)
@@ -56,6 +72,8 @@ def prepare(source, destination, max_cote=MAX_COTE, qualite=QUALITE):
             image = image.convert("RGB")
 
         avant = image.size
+        if crop:
+            image = image.crop(boite_de_recadrage(image.size, crop))
         if max(image.size) > max_cote:
             ratio = max_cote / float(max(image.size))
             cible = (max(1, round(image.width * ratio)),
@@ -94,7 +112,20 @@ def main():
                            help="taille maximale du grand côté, en pixels (défaut : %d)" % MAX_COTE)
     analyseur.add_argument("--qualite", type=int, default=QUALITE,
                            help="qualité JPEG de 1 à 95 (défaut : %d)" % QUALITE)
+    analyseur.add_argument("--crop", metavar="X,Y,L,H",
+                           help="recadrage en fractions de l'image d'origine, "
+                                "par exemple 0.08,0.16,0.74,0.74")
     options = analyseur.parse_args()
+
+    crop = None
+    if options.crop:
+        try:
+            crop = tuple(float(v) for v in options.crop.split(","))
+        except ValueError:
+            crop = None
+        if not crop or len(crop) != 4 or not all(0 <= v <= 1 for v in crop):
+            print("--crop attend quatre fractions entre 0 et 1 : X,Y,L,H", file=sys.stderr)
+            return 1
 
     total_avant = total_apres = 0
     avec_gps = []
@@ -107,7 +138,7 @@ def main():
         if not os.path.exists(source):
             print("Introuvable : %s" % source, file=sys.stderr)
             return 1
-        infos = prepare(source, destination, options.max_cote, options.qualite)
+        infos = prepare(source, destination, options.max_cote, options.qualite, crop)
         total_avant += infos["poids_avant"]
         total_apres += infos["poids_apres"]
         if infos["gps"]:
