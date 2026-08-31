@@ -1,0 +1,47 @@
+name: Avis Booksy
+
+# Met à jour chaque jour la section « avis » du site depuis la fiche Booksy.
+# Le script réécrit le HTML ; s'il y a du changement, il est committé et
+# GitHub Pages publie la nouvelle version automatiquement.
+
+on:
+  schedule:
+    # 06:12 UTC, soit 08:12 à Paris en été et 07:12 en hiver.
+    # Les horaires de cron GitHub ne sont pas garantis à la minute.
+    - cron: '12 6 * * *'
+  workflow_dispatch:        # permet aussi de lancer la mise à jour à la main
+
+permissions:
+  contents: write           # nécessaire pour committer la mise à jour
+
+concurrency:
+  group: avis-booksy
+  cancel-in-progress: false
+
+jobs:
+  mise-a-jour:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Mettre à jour les avis depuis Booksy
+        run: python3 scripts/maj-avis.py
+
+      - name: Committer si les avis ont changé
+        run: |
+          if git diff --quiet; then
+            echo "Aucun changement : les avis sont déjà à jour."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --update
+          git commit -m "chore(avis): synchronise les avis depuis Booksy"
+          git push
+          echo "Avis mis à jour et publiés."

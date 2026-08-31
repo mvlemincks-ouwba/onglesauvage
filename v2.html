@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ongle Sauvage — Nail art &amp; onglerie à Castets et Castillon</title>
+<meta name="description" content="Ongle Sauvage, onglerie et nail art sur mesure à Castets et Castillon (Sud-Gironde). Gel, gel X, semi-permanent, soin de l'ongle. Sur rendez-vous via Booksy.">
+<meta name="theme-color" content="#f6f2e8">
+<link rel="canonical" href="https://mvlemincks-ouwba.github.io/onglesauvage/">
+<link rel="icon" href="assets/logo.jpg">
+<link rel="apple-touch-icon" href="assets/logo.jpg">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Ongle Sauvage — Nail art &amp; onglerie en Sud-Gironde">
+<meta property="og:description" content="Le nail art qui vous ressemble. Créations sur mesure, gel, gel X, semi-permanent et soin de l'ongle à Castets et Castillon.">
+<meta property="og:image" content="https://mvlemincks-ouwba.github.io/onglesauvage/assets/nailart-1.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..600&family=Parisienne&family=Jost:ital,wght@0,300..600;1,300..500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* Palette sauge / eucalyptus & beige */
+    --forest:#2e4d34;
+    --moss:#4a5d23;
+    --sage:#a3b18a;
+    --dusty:#8fa68d;
+    --eucalyptus:#b9cdb0;
+    --mint:#c8dcc2;
+    --seafoam:#e4f1e0;
+    --cream:#f6f2e8;
+    --sand:#efe7d9;
+    --clay:#c8b8a4;
+    --ink:#33402f;
+
+    --shell:1180px;
+    --block:clamp(58px, 7vw, 110px);
+    --arch:999px 999px 28px 28px;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Jost',system-ui,-apple-system,sans-serif;
+    font-weight:400;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:var(--forest)}
+  ::selection{background:var(--eucalyptus);color:var(--forest)}
+  :focus-visible{outline:2px solid var(--dusty);outline-offset:3px}
+
+  /* Typographie */
+  h1,h2,h3,.display{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-weight:500;
+    line-height:1.02;
+    margin:0;
+  }
+  .caps{text-transform:uppercase;letter-spacing:.06em}
+  .script{
+    font-family:'Parisienne',cursive;
+    text-transform:none;
+    letter-spacing:0;
+    font-weight:400;
+    color:var(--dusty);
+    display:block;
+    line-height:1.1;
+  }
+  .shell{max-width:var(--shell);margin:0 auto}
+  .section{padding:var(--block) 24px;position:relative;overflow:clip}
+  .eyebrow{
+    font-size:12px;text-transform:uppercase;letter-spacing:.24em;
+    color:var(--dusty);font-weight:500;
+  }
+  .lede{font-size:clamp(15px,1.45vw,18px);line-height:1.75;color:rgba(51,64,47,.7);font-weight:300;text-wrap:pretty}
+  .rule{height:1px;background:rgba(51,64,47,.14);margin:14px 0 0}
+
+  /* Boutons */
+  .btn{
+    display:inline-block;text-decoration:none;
+    padding:15px 30px;border-radius:999px;
+    font-family:'Jost',sans-serif;font-weight:500;font-size:14px;
+    text-transform:uppercase;letter-spacing:.14em;
+    transition:background .18s, color .18s, border-color .18s;
+  }
+  .btn-sage{background:var(--sage);color:#fff}
+  .btn-sage:hover{background:var(--forest);color:#fff}
+  .btn-forest{background:var(--forest);color:var(--cream)}
+  .btn-forest:hover{background:var(--sage);color:#fff}
+  .btn-pale{background:var(--seafoam);color:var(--forest)}
+  .btn-pale:hover{background:#fff}
+  .btn-ghost{color:var(--ink);border:1px solid rgba(51,64,47,.22);padding:14px 28px}
+  .btn-ghost:hover{border-color:var(--forest);background:rgba(255,255,255,.5)}
+  .btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+  /* Puces */
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+  .chip{
+    border-radius:999px;padding:9px 18px;font-size:13px;font-weight:400;
+    letter-spacing:.06em;background:#fff;color:var(--ink);
+    border:1px solid rgba(51,64,47,.08);
+  }
+  .chip-dark{background:rgba(255,255,255,.1);color:var(--cream);border-color:rgba(255,255,255,.2)}
+
+  /* En-tête */
+  .topbar{
+    position:sticky;top:0;z-index:30;
+    background:rgba(246,242,232,.9);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(51,64,47,.1);
+  }
+  .topbar-inner{
+    max-width:var(--shell);margin:0 auto;padding:12px 24px;
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 20px;
+  }
+  .nav-meta{
+    flex:1 1 180px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 22px;
+    font-size:12px;letter-spacing:.08em;color:rgba(51,64,47,.6);font-weight:300;text-transform:uppercase;
+  }
+  .nav-meta .stars{color:var(--sage);letter-spacing:.06em}
+  .brand{
+    display:flex;align-items:center;justify-content:center;gap:11px;
+    font-family:'Cormorant Garamond',serif;font-weight:500;
+    text-transform:uppercase;font-size:21px;letter-spacing:.16em;
+    color:var(--forest);text-decoration:none;
+  }
+  .brand img{width:34px;height:34px;border-radius:999px;object-fit:cover}
+  .nav-cta{flex:1 1 180px;display:flex;justify-content:flex-end}
+  .nav-cta .btn{padding:11px 20px;font-size:11px}
+  @media (max-width:760px){
+    .nav-meta{display:none}
+    .nav-cta{flex:0 0 auto}
+  }
+  @media (max-width:560px){
+    .topbar-inner{flex-wrap:nowrap;gap:10px;padding:10px 16px}
+    .brand{font-size:16px;gap:8px;letter-spacing:.12em}
+    .brand img{width:28px;height:28px}
+    .nav-cta .btn{padding:10px 14px;font-size:10px;letter-spacing:.1em;white-space:nowrap}
+  }
+
+  /* Héro */
+  .hero{padding:clamp(34px,4.5vw,72px) 24px clamp(46px,6vw,86px);text-align:center}
+  .hero .shell{position:relative;max-width:960px}
+  .hero-leaf{
+    position:absolute;top:-6%;width:min(150px,26vw);opacity:.5;pointer-events:none;
+  }
+  .hero-leaf.l{left:-3%;transform:rotate(-12deg)}
+  .hero-leaf.r{right:-3%;transform:scaleX(-1) rotate(-12deg)}
+  @media (max-width:820px){.hero-leaf{opacity:.35;width:20vw}}
+  @media (max-width:560px){.hero-leaf{opacity:.28;width:16vw;top:-2%}
+    .hero-leaf.l{left:-5%}.hero-leaf.r{right:-5%}}
+  .hero h1{
+    font-size:clamp(40px,7.4vw,96px);
+    text-transform:uppercase;letter-spacing:.03em;
+    color:var(--forest);position:relative;
+  }
+  .hero .script-lead{
+    font-family:'Parisienne',cursive;color:var(--sage);
+    font-size:clamp(23px,3.4vw,42px);line-height:1.15;margin:-.08em 0 0;
+  }
+  .hero-tag{
+    display:inline-block;margin-top:22px;
+    background:var(--sage);color:#fff;border-radius:999px;
+    padding:9px 26px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+  }
+  .hero .lede{margin:22px auto 0;max-width:36ch;font-size:clamp(15px,1.4vw,17.5px)}
+  .hero-place{
+    margin:14px 0 0;font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+    color:rgba(51,64,47,.5);font-weight:400;
+  }
+  .hero .btn-row{justify-content:center}
+  .hero-strip{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.6vw,20px);
+    max-width:820px;margin:clamp(34px,4.5vw,58px) auto 0;
+  }
+  .hero-strip .arch{aspect-ratio:3/4.2}
+  @media (max-width:560px){
+    .hero-strip{grid-template-columns:repeat(3,1fr);gap:8px}
+  }
+
+  /* Formes en arche */
+  .arch{
+    position:relative;border-radius:var(--arch);overflow:hidden;
+    background:var(--sand);
+  }
+  .arch img{width:100%;height:100%;object-fit:cover}
+  .arch-label{
+    position:absolute;left:50%;bottom:12px;transform:translateX(-50%);
+    background:rgba(246,242,232,.92);color:var(--forest);
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    padding:7px 16px;border-radius:999px;white-space:nowrap;
+  }
+
+  /* Section À propos */
+  .about{background:var(--sand)}
+  .about-grid{
+    display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+    gap:clamp(30px,5vw,72px);align-items:center;
+  }
+  @media (max-width:820px){.about-grid{grid-template-columns:1fr}}
+  .stack-title .script{font-size:clamp(30px,4vw,52px);margin-bottom:-.18em}
+  .stack-title h2{
+    font-size:clamp(32px,5vw,64px);text-transform:uppercase;letter-spacing:.05em;color:var(--forest);
+  }
+  .about-quote{
+    margin:22px 0 0;font-size:clamp(16px,1.6vw,20px);line-height:1.75;font-weight:300;
+    color:rgba(51,64,47,.86);text-wrap:pretty;
+  }
+  .about-note{margin:18px 0 0;font-size:15px;line-height:1.7;font-weight:300;color:rgba(51,64,47,.62)}
+  .portrait{position:relative;max-width:360px;margin:0 auto;width:100%}
+  .portrait-blob{
+    position:absolute;top:-22px;left:-22px;width:72%;height:78%;
+    background:var(--eucalyptus);border-radius:999px 999px 20px 20px;
+  }
+  .portrait-blob.b2{
+    top:auto;left:auto;right:-18px;bottom:-18px;width:46%;height:42%;
+    background:var(--clay);border-radius:20px 20px 999px 999px;
+  }
+  .portrait .arch{position:relative;aspect-ratio:3/4;border-radius:var(--arch)}
+
+  /* Nail art */
+  .nailart{background:var(--forest);color:var(--cream)}
+  .nailart-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+    gap:clamp(28px,4vw,60px);align-items:center;
+  }
+  .nailart .script{color:var(--eucalyptus);font-size:clamp(30px,4vw,52px);margin-bottom:-.18em}
+  .nailart h2{font-size:clamp(32px,5vw,64px);text-transform:uppercase;letter-spacing:.05em;color:var(--cream)}
+  .nailart p{
+    margin:22px 0 0;font-size:clamp(15px,1.5vw,18px);line-height:1.75;font-weight:300;
+    color:rgba(246,242,232,.76);max-width:44ch;text-wrap:pretty;
+  }
+  .nailart .btn{margin-top:30px}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .duo .arch{aspect-ratio:3/4;background:rgba(255,255,255,.08)}
+
+  /* Galerie */
+  .gallery-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px}
+  .gallery-head h2{font-size:clamp(30px,4.4vw,56px);text-transform:uppercase;letter-spacing:.05em;color:var(--forest)}
+  .gallery-head a{
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;
+    color:var(--dusty);border-bottom:1px solid rgba(143,166,141,.5);padding-bottom:3px;
+  }
+  .gallery-head a:hover{color:var(--forest);border-color:var(--forest)}
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:16px;margin-top:clamp(24px,3vw,42px);
+  }
+  .gallery-grid .arch{aspect-ratio:3/4}
+
+  /* Prestations */
+  .services{background:var(--seafoam)}
+  .services-head{text-align:center}
+  .services-head .script{font-size:clamp(30px,4vw,50px);margin-bottom:-.16em}
+  .services-head h2{font-size:clamp(30px,4.4vw,58px);text-transform:uppercase;letter-spacing:.05em;color:var(--forest)}
+  .services-note{
+    margin:16px auto 0;text-align:center;max-width:46ch;
+    color:rgba(51,64,47,.6);font-size:15px;font-weight:300;line-height:1.7;
+  }
+  .cards{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:clamp(14px,2vw,22px);margin-top:clamp(30px,3.6vw,50px);
+  }
+  .card{
+    background:var(--cream);border-radius:220px 220px 24px 24px;
+    padding:50px 30px 32px;text-align:center;
+    border:1px dashed rgba(143,166,141,.55);
+  }
+  .card-num{
+    font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.2em;
+    color:var(--sage);
+  }
+  .card-title{
+    font-family:'Cormorant Garamond',serif;font-weight:500;
+    text-transform:uppercase;letter-spacing:.09em;
+    font-size:22px;color:var(--forest);margin-top:8px;
+  }
+  .card p{margin:12px 0 0;color:rgba(51,64,47,.66);font-size:14.5px;line-height:1.7;font-weight:300}
+  .center{text-align:center;margin-top:clamp(28px,3.5vw,44px)}
+
+  /* Horaires + infos pratiques */
+  .practical-grid{
+    display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+    gap:clamp(28px,4.5vw,64px);align-items:center;
+  }
+  @media (max-width:820px){.practical-grid{grid-template-columns:1fr}}
+  .hours-card{
+    background:var(--sage);color:#fff;border-radius:240px 240px 26px 26px;
+    padding:clamp(46px,5vw,64px) clamp(26px,3vw,40px) clamp(30px,3.4vw,42px);
+    text-align:center;max-width:400px;margin:0 auto;width:100%;
+  }
+  .hours-card .script{color:rgba(255,255,255,.82);font-size:clamp(28px,3.4vw,42px);margin-bottom:-.2em}
+  .hours-card h2{
+    font-size:clamp(24px,2.8vw,34px);text-transform:uppercase;letter-spacing:.14em;color:#fff;
+  }
+  .hours-list{margin:26px 0 0;padding:0;list-style:none}
+  .hours-list li{
+    display:flex;justify-content:space-between;gap:14px;
+    padding:11px 0;font-size:14px;font-weight:300;letter-spacing:.04em;
+    border-top:1px solid rgba(255,255,255,.24);
+  }
+  .hours-list li:last-child{border-bottom:1px solid rgba(255,255,255,.24)}
+  .hours-list span:first-child{text-transform:uppercase;letter-spacing:.12em;font-size:12px;padding-top:2px}
+  .hours-note{margin:20px 0 0;font-size:13px;font-weight:300;color:rgba(255,255,255,.8);line-height:1.6}
+  .practical .script{font-size:clamp(28px,3.6vw,46px);margin-bottom:-.18em}
+  .practical h2{font-size:clamp(28px,4vw,52px);text-transform:uppercase;letter-spacing:.05em;color:var(--forest)}
+  .info-list{margin:26px 0 0;padding:0;list-style:none;display:grid;gap:20px}
+  .info-list .label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--dusty)}
+  .info-list .value{margin-top:5px;font-size:16px;line-height:1.6;font-weight:300}
+  .info-list .value a{text-decoration:none;border-bottom:1px solid rgba(46,77,52,.3)}
+  .info-list .value .soft{color:rgba(51,64,47,.55);font-size:14px}
+
+  /* Avis */
+  .reviews{background:var(--eucalyptus)}
+  .reviews-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:14px}
+  .reviews-head h2{font-size:clamp(30px,4.4vw,56px);text-transform:uppercase;letter-spacing:.05em;color:var(--forest)}
+  .reviews-score{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(46,77,52,.75)}
+  /* Carrousel d'avis */
+  .reviews-rail{
+    display:flex;gap:16px;margin-top:clamp(24px,3vw,38px);
+    overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+    padding:2px 0 10px;-webkit-overflow-scrolling:touch;
+    scrollbar-width:none;-ms-overflow-style:none;
+  }
+  .reviews-rail::-webkit-scrollbar{display:none}
+  .review{
+    flex:0 0 clamp(252px,78vw,320px);scroll-snap-align:start;
+    background:var(--cream);border-radius:160px 160px 24px 24px;
+    padding:44px 30px 30px;text-align:center;
+    display:flex;flex-direction:column;justify-content:center;
+  }
+  .rail-foot{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+    gap:14px;margin-top:18px;
+  }
+  .rail-hint{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(46,77,52,.6)}
+  .rail-hint a{color:var(--forest)}
+  .rail-nav{display:flex;gap:10px}
+  .rail-btn{
+    width:44px;height:44px;border-radius:999px;cursor:pointer;
+    background:transparent;border:1px solid rgba(46,77,52,.35);color:var(--forest);
+    font-size:17px;line-height:1;display:grid;place-items:center;
+    transition:background .18s, border-color .18s, opacity .18s;
+  }
+  .rail-btn:hover{background:var(--cream);border-color:var(--forest)}
+  .rail-btn[disabled]{opacity:.3;cursor:default}
+  .rail-btn[disabled]:hover{background:transparent;border-color:rgba(46,77,52,.35)}
+  .review .quote{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--sage);line-height:.6}
+  .review p{
+    margin:14px 0 0;font-size:15px;line-height:1.75;font-weight:300;
+    color:rgba(51,64,47,.82);text-wrap:pretty;
+    display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden;
+  }
+  .review-name{
+    margin-top:20px;font-family:'Cormorant Garamond',serif;font-size:18px;
+    text-transform:uppercase;letter-spacing:.14em;color:var(--forest);
+  }
+  .review-service{margin-top:3px;font-size:12px;letter-spacing:.1em;color:rgba(51,64,47,.5)}
+  @media (prefers-reduced-motion:reduce){.reviews-rail{scroll-behavior:auto}}
+
+  /* FAQ */
+  .faq .shell{max-width:840px}
+  .faq-head{text-align:center;margin-bottom:clamp(22px,3vw,38px)}
+  .faq-head .script{font-size:clamp(28px,3.6vw,46px);margin-bottom:-.18em}
+  .faq-head h2{font-size:clamp(28px,4vw,52px);text-transform:uppercase;letter-spacing:.05em;color:var(--forest)}
+  .faq details{border-top:1px solid rgba(51,64,47,.14);padding:20px 0}
+  .faq details:last-of-type{border-bottom:1px solid rgba(51,64,47,.14)}
+  .faq summary{
+    display:flex;justify-content:space-between;gap:16px;
+    font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:500;
+    color:var(--forest);list-style:none;cursor:pointer;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:'+';color:var(--sage);flex:0 0 auto;font-size:22px;line-height:1}
+  .faq details[open] summary::after{content:'–'}
+  .faq details p{margin:12px 0 0;color:rgba(51,64,47,.68);font-size:15px;line-height:1.75;font-weight:300}
+
+  /* Instagram */
+  .social{background:var(--sand);text-align:center}
+  .social .script{font-size:clamp(28px,3.6vw,46px);margin-bottom:-.16em}
+  .social h2{font-size:clamp(28px,4.2vw,54px);text-transform:uppercase;letter-spacing:.05em;color:var(--forest)}
+  .social h2 a{color:var(--dusty);text-decoration:none}
+  .social h2 a:hover{color:var(--forest)}
+  .social p{margin:20px auto 0;max-width:44ch;font-size:15px;line-height:1.75;font-weight:300;color:rgba(51,64,47,.66)}
+  .social .btn{margin-top:26px}
+
+  /* Pied de page */
+  .footer{background:var(--forest);color:var(--cream);padding:clamp(50px,6vw,90px) 24px 34px}
+  .footer-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:clamp(24px,4vw,54px);padding-bottom:38px;border-bottom:1px solid rgba(246,242,232,.18);
+  }
+  .footer .script{color:var(--eucalyptus);font-size:clamp(28px,3.4vw,44px);margin-bottom:-.18em}
+  .footer .display{font-size:clamp(28px,3.8vw,48px);text-transform:uppercase;letter-spacing:.05em;color:var(--cream)}
+  .footer-label{font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:rgba(246,242,232,.55)}
+  .footer-value{margin-top:6px;font-size:16px;line-height:1.6;font-weight:300}
+  .footer-value .soft{color:rgba(246,242,232,.6);font-size:14px}
+  .footer-actions{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+  .footer-link{
+    color:rgba(246,242,232,.78);text-decoration:none;font-size:12px;
+    letter-spacing:.16em;text-transform:uppercase;
+  }
+  .footer-link:hover{color:#fff}
+  .footer-bottom{
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
+    padding-top:22px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,242,232,.5);
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none !important}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="nav-meta">
+      <span>31 Rue du Port · Castets et Castillon</span>
+      <span class="stars">★★★★★ <span data-avis-rating>5,0</span> · <span data-avis-count>15</span> avis</span>
+    </div>
+    <a class="brand" href="#top">
+      <img src="assets/logo.jpg" alt="" width="34" height="34">Ongle Sauvage
+    </a>
+    <div class="nav-cta">
+      <a class="btn btn-forest" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener">Rendez-vous</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="top" class="hero">
+    <div class="shell">
+      <svg class="hero-leaf l" viewBox="0 0 120 160" aria-hidden="true" fill="none">
+        <path d="M60 158V44" stroke="#a3b18a" stroke-width="2"/>
+        <path d="M60 60c-16-6-30-2-42 10 14 10 30 10 42-2z" fill="#a3b18a" opacity=".85"/>
+        <path d="M60 60c16-6 30-2 42 10-14 10-30 10-42-2z" fill="#8fa68d" opacity=".7"/>
+        <path d="M60 92c-14-5-26-2-36 9 12 9 26 9 36-2z" fill="#b9cdb0"/>
+        <path d="M60 92c14-5 26-2 36 9-12 9-26 9-36-2z" fill="#a3b18a" opacity=".8"/>
+        <path d="M60 124c-11-4-21-1-29 7 10 7 21 7 29-2z" fill="#c8dcc2"/>
+        <path d="M60 124c11-4 21-1 29 7-10 7-21 7-29-2z" fill="#b9cdb0" opacity=".9"/>
+        <path d="M60 44c-8-8-8-20 0-30 8 10 8 22 0 30z" fill="#8fa68d"/>
+      </svg>
+      <svg class="hero-leaf r" viewBox="0 0 120 160" aria-hidden="true" fill="none">
+        <path d="M60 158V44" stroke="#a3b18a" stroke-width="2"/>
+        <path d="M60 60c-16-6-30-2-42 10 14 10 30 10 42-2z" fill="#a3b18a" opacity=".85"/>
+        <path d="M60 60c16-6 30-2 42 10-14 10-30 10-42-2z" fill="#8fa68d" opacity=".7"/>
+        <path d="M60 92c-14-5-26-2-36 9 12 9 26 9 36-2z" fill="#b9cdb0"/>
+        <path d="M60 92c14-5 26-2 36 9-12 9-26 9-36-2z" fill="#a3b18a" opacity=".8"/>
+        <path d="M60 124c-11-4-21-1-29 7 10 7 21 7 29-2z" fill="#c8dcc2"/>
+        <path d="M60 124c11-4 21-1 29 7-10 7-21 7-29-2z" fill="#b9cdb0" opacity=".9"/>
+        <path d="M60 44c-8-8-8-20 0-30 8 10 8 22 0 30z" fill="#8fa68d"/>
+      </svg>
+
+      <h1>Ongle<br>Sauvage</h1>
+      <p class="script-lead">le nail art qui vous ressemble</p>
+      <div class="hero-tag">Nail art · Gel · Gel X · Soin</div>
+      <p class="lede">Créations sur mesure, dessinées à la main ongle&nbsp;par&nbsp;ongle. Et tout le classique aussi.</p>
+      <p class="hero-place">Castets et Castillon · Sud-Gironde</p>
+      <div class="btn-row">
+        <a class="btn btn-sage" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener">Réserver sur Booksy</a>
+        <a class="btn btn-ghost" href="#nailart">Voir le nail art</a>
+      </div>
+      <div class="hero-strip">
+        <div class="arch"><img src="assets/nailart-1.jpg" alt="Nail art réalisé chez Ongle Sauvage" loading="lazy"></div>
+        <div class="arch"><img src="assets/galerie-1.jpg" alt="Pose de semi-permanent sur les mains" loading="lazy"></div>
+        <div class="arch"><img src="assets/nailart-2.jpg" alt="Détail d'un nail art dessiné à la main" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about">
+    <div class="shell about-grid">
+      <div>
+        <div class="eyebrow">À propos</div>
+        <div class="stack-title" style="margin-top:14px">
+          <span class="script">moi, c'est</span>
+          <h2>Emelyne</h2>
+        </div>
+        <p class="about-quote">« Moi c'est Emelyne. Le nail art, c'est ma façon de faire : on part de votre idée, et je la dessine ongle par ongle. Le reste — gel, gel X, semi-permanent, soin — je le travaille avec la même exigence. »</p>
+        <p class="about-note">Modes de paiement acceptés : espèces, CB et virements. À très vite 😊</p>
+      </div>
+      <div class="portrait">
+        <div class="portrait-blob" aria-hidden="true"></div>
+        <div class="portrait-blob b2" aria-hidden="true"></div>
+        <div class="arch"><img src="assets/galerie-2.jpg" alt="Soin de l'ongle chez Ongle Sauvage" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="nailart" class="section nailart">
+    <div class="shell nailart-grid">
+      <div>
+        <span class="script">le</span>
+        <h2>Nail art<br>sur mesure</h2>
+        <p>Chaque pose part d'une idée : une couleur, une inspiration, une occasion. On construit le motif ensemble, puis il est dessiné à la main, ongle par ongle.</p>
+        <div class="chips">
+          <span class="chip chip-dark">Dessins à la main</span>
+          <span class="chip chip-dark">Dégradés</span>
+          <span class="chip chip-dark">Strass &amp; reliefs</span>
+        </div>
+        <a class="btn btn-pale" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener">Parler de votre projet</a>
+      </div>
+      <div class="duo">
+        <div class="arch"><img src="assets/nailart-1.jpg" alt="Nail art réalisé chez Ongle Sauvage, pièce signature" loading="lazy"></div>
+        <div class="arch"><img src="assets/nailart-2.jpg" alt="Détail d'un nail art dessiné à la main" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerie" class="section">
+    <div class="shell">
+      <div class="gallery-head">
+        <h2>Mes réalisations</h2>
+        <a href="https://www.instagram.com/ongle_sauvage/" target="_blank" rel="noopener">Plus de photos sur Instagram</a>
+      </div>
+      <div class="gallery-grid">
+        <div class="arch">
+          <img src="assets/galerie-1.jpg" alt="Pose de semi-permanent sur les mains" loading="lazy">
+          <div class="arch-label">Semi-permanent main</div>
+        </div>
+        <div class="arch">
+          <img src="assets/galerie-2.jpg" alt="Soin de l'ongle : limage, cuticules et hydratation" loading="lazy">
+          <div class="arch-label">Soin de l'ongle</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prestations" class="section services">
+    <div class="shell">
+      <div class="services-head">
+        <span class="script">mes</span>
+        <h2>Prestations</h2>
+        <p class="services-note">Durées et tarifs détaillés au moment de la réservation, sur Booksy.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="card-num">01</div>
+          <div class="card-title">Gel</div>
+          <p>La pose gel permet de renforcer et d'embellir vos ongles, pour des mains soignées et de jolis ongles qui tiennent dans le temps.</p>
+        </div>
+        <div class="card">
+          <div class="card-num">02</div>
+          <div class="card-title">Pose américaine / gel X</div>
+          <p>Le Gel X, aussi appelé pose américaine, permet d’avoir des ongles longs et élégants grâce à des capsules en gel, pour un résultat naturel, solide et confortable.</p>
+        </div>
+        <div class="card">
+          <div class="card-num">03</div>
+          <div class="card-title">Semi-permanent</div>
+          <p>Un vernis qui tient plusieurs semaines sans s'écailler, sur les mains ou sur les pieds.</p>
+        </div>
+        <div class="card">
+          <div class="card-num">04</div>
+          <div class="card-title">Soin de l'ongle</div>
+          <p>Ongles remis au propre, cuticules soignées, mains massées et hydratées.</p>
+        </div>
+        <div class="card">
+          <div class="card-num">05</div>
+          <div class="card-title">Forfaits</div>
+          <p>Des tarifs adaptés : forfait classique, forfait étudiant (sur justificatif) et forfait homme.</p>
+        </div>
+        <div class="card">
+          <div class="card-num">06</div>
+          <div class="card-title">Réparation</div>
+          <p>Un ongle cassé ou décollé se répare, en gel comme en gel X.</p>
+        </div>
+      </div>
+      <div class="center">
+        <a class="btn btn-sage" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener">Voir tous les tarifs et réserver</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section practical">
+    <div class="shell practical-grid">
+      <div class="hours-card">
+        <span class="script">horaires</span>
+        <h2>&amp; accès</h2>
+        <ul class="hours-list">
+          <li><span>Matin</span><span>09:00 – 12:00</span></li>
+          <li><span>Après-midi</span><span>13:00 – 19:00</span></li>
+          <li><span>Rendez-vous</span><span>Booksy 24 h/24</span></li>
+        </ul>
+        <p class="hours-note">Les jours d'ouverture varient : les créneaux réellement disponibles sont visibles en direct sur Booksy.</p>
+      </div>
+      <div>
+        <span class="script">un endroit</span>
+        <h2>Détente</h2>
+        <p class="lede" style="margin-top:18px;max-width:44ch">Un salon calme et chaleureux à Castets et Castillon, pensé pour prendre le temps.</p>
+        <ul class="info-list">
+          <li>
+            <div class="label">Adresse</div>
+            <div class="value">31 Rue du Port<br>33210 Castets et Castillon</div>
+          </li>
+          <li>
+            <div class="label">Paiement</div>
+            <div class="value">Espèces · Carte bancaire · Virement</div>
+          </li>
+          <li>
+            <div class="label">Sur place</div>
+            <div class="value">Places de parking · Wi-Fi · Adapté aux enfants</div>
+          </li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn btn-ghost" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener">Voir les disponibilités</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reviews">
+    <div class="shell">
+      <div class="reviews-head">
+        <h2>Elles en parlent</h2>
+        <div class="reviews-score">★ <span data-avis-rating>5,0</span> sur <span data-avis-count>15</span> avis Booksy</div>
+      </div>
+      <!-- avis:start — bloc régénéré par .github/workflows/avis-booksy.yml, ne pas éditer à la main -->
+      <div class="reviews-rail" id="reviewsRail" tabindex="0" role="group" aria-label="Avis clientes, défilement horizontal">
+        <article class="review">
+          <div class="quote">&ldquo;</div>
+          <p>J’ai adoré ! Je recommande à fond !😍</p>
+          <div class="review-name">clara</div>
+          <div class="review-service">Pose Gel X classique</div>
+        </article>
+        <article class="review">
+          <div class="quote">&ldquo;</div>
+          <p>Prestation sublime, professionnelle adorable ! Outre faire mes ongles, j’ai passé un super moment « girly » (comprenez bavardages et rigolades).</p>
+          <div class="review-name">Celine</div>
+          <div class="review-service">Pose Gel X classique</div>
+        </article>
+        <article class="review">
+          <div class="quote">&ldquo;</div>
+          <p>Première expérience réussie. Emelyne est de très bon contact ( et conseils) rien à redire sur la prestation. Je recommande ++ Jai passé un très bon moment</p>
+          <div class="review-name">Claire</div>
+          <div class="review-service">Semi-permanent main</div>
+        </article>
+        <article class="review">
+          <div class="quote">&ldquo;</div>
+          <p>Incroyable agréable moment et une pose sublime j’adore merci beaucoup !☺️</p>
+          <div class="review-name">Maelya</div>
+          <div class="review-service">Pose Gel X classique</div>
+        </article>
+        <article class="review">
+          <div class="quote">&ldquo;</div>
+          <p>Une vraie pépite ! Je fais mes ongles chez elle depuis quelque temps maintenant et je ressors à chaque rendez-vous encore plus contente que la fois d’avant.</p>
+          <div class="review-name">Déjardin</div>
+        </article>
+        <article class="review">
+          <div class="quote">&ldquo;</div>
+          <p>La pose était incroyable et l’accueil formidable je recommande vivement.</p>
+          <div class="review-name">Perle</div>
+          <div class="review-service">Pose Gel X classique</div>
+        </article>
+        <article class="review">
+          <div class="quote">&ldquo;</div>
+          <p>Très professionnelle, minutieuse et à l’écoute. Le résultat est impeccable et correspond parfaitement à mes attentes. Merci pour ce joli travail !🌸🌸🩷</p>
+          <div class="review-name">Margaux</div>
+          <div class="review-service">Pose Gel X classique</div>
+        </article>
+        <article class="review">
+          <div class="quote">&ldquo;</div>
+          <p>La pose est incroyablement belle, hyper précise. L’atmosphère chez Ongle Sauvage est douce, calme.</p>
+          <div class="review-name">Lya</div>
+        </article>
+        <article class="review">
+          <div class="quote">&ldquo;</div>
+          <p>Très bon moment en compagnie d’Emeline. Je n’ai pas vu le temps passer</p>
+          <div class="review-name">DE</div>
+          <div class="review-service">Semi-permanent main ou pied</div>
+        </article>
+        <article class="review">
+          <div class="quote">&ldquo;</div>
+          <p>Personne à l écoute, travail soigné, merci beaucoup à Ongle sauvage pour cette magnifique prestation, je recommande vivement</p>
+          <div class="review-name">Marie-Christine</div>
+        </article>
+      </div>
+      <!-- avis:end -->
+      <div class="rail-foot">
+        <div class="rail-hint">Faites défiler · <a href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets#reviews" target="_blank" rel="noopener">les <span data-avis-count>15</span> avis sur Booksy ↗</a></div>
+        <div class="rail-nav">
+          <button class="rail-btn" type="button" data-rail="prev" aria-label="Avis précédents">&#8592;</button>
+          <button class="rail-btn" type="button" data-rail="next" aria-label="Avis suivants">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq">
+    <div class="shell">
+      <div class="faq-head">
+        <span class="script">vos</span>
+        <h2>Questions</h2>
+      </div>
+      <details>
+        <summary>Comment prendre rendez-vous ?</summary>
+        <p>Sur rendez-vous uniquement, via Booksy : disponibilités visibles en ligne 24 h/24.</p>
+      </details>
+      <details>
+        <summary>Quels moyens de paiement sont acceptés ?</summary>
+        <p>Espèces, carte bancaire et virements.</p>
+      </details>
+      <details>
+        <summary>Un ongle a cassé, que faire ?</summary>
+        <p>La réparation d'ongle en gel ou gel X est possible, à réserver sur Booksy.</p>
+      </details>
+      <details>
+        <summary>Peut-on offrir une prestation ?</summary>
+        <p>Oui, des cartes cadeaux sont disponibles depuis la page Booksy.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section social">
+    <div class="shell">
+      <span class="script">suivez le travail</span>
+      <h2><a href="https://www.instagram.com/ongle_sauvage/" target="_blank" rel="noopener">@ongle_sauvage</a></h2>
+      <p>Les nouvelles créations, les projets en cours et les disponibilités de dernière minute y passent en premier.</p>
+      <a class="btn btn-forest" href="https://www.instagram.com/ongle_sauvage/" target="_blank" rel="noopener">Voir le compte Instagram</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div>
+        <span class="script">venez me</span>
+        <div class="display">Voir</div>
+      </div>
+      <div>
+        <div class="footer-label">Adresse</div>
+        <div class="footer-value">31 Rue du Port<br>33210 Castets et Castillon</div>
+        <div class="footer-label" style="margin-top:22px">Horaires</div>
+        <div class="footer-value">09:00 – 12:00 · 13:00 – 19:00<br><span class="soft">Variables selon les jours, voir Booksy</span></div>
+      </div>
+      <div class="footer-actions">
+        <a class="btn btn-pale" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener">Réserver sur Booksy</a>
+        <a class="footer-link" href="https://www.instagram.com/ongle_sauvage/" target="_blank" rel="noopener">Instagram ↗</a>
+        <a class="footer-link" href="https://www.facebook.com/share/1AzJnumA5m/" target="_blank" rel="noopener">Facebook ↗</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>Ongle Sauvage — Nail art &amp; onglerie</div>
+      <div>Sur rendez-vous uniquement</div>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NailSalon",
+  "name": "Ongle Sauvage",
+  "description": "Onglerie et nail art sur mesure : gel, gel X, semi-permanent, soin de l'ongle.",
+  "image": "https://mvlemincks-ouwba.github.io/onglesauvage/assets/nailart-1.jpg",
+  "url": "https://mvlemincks-ouwba.github.io/onglesauvage/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "31 Rue du Port",
+    "postalCode": "33210",
+    "addressLocality": "Castets et Castillon",
+    "addressCountry": "FR"
+  },
+  "priceRange": "€€",
+  "paymentAccepted": "Espèces, Carte bancaire, Virement",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "15"
+  },
+  "sameAs": [
+    "https://www.instagram.com/ongle_sauvage/",
+    "https://www.facebook.com/share/1AzJnumA5m/",
+    "https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets"
+  ]
+}
+</script>
+
+<script>
+  (function(){
+    var rail = document.getElementById('reviewsRail');
+    if(!rail) return;
+    var prev = document.querySelector('[data-rail="prev"]');
+    var next = document.querySelector('[data-rail="next"]');
+    var idx = 0, lock = false, lockT;
+
+    function step(){
+      var card = rail.querySelector('.review');
+      return card ? card.getBoundingClientRect().width + 16 : rail.clientWidth;
+    }
+    function maxIdx(){
+      return Math.max(0, Math.ceil((rail.scrollWidth - rail.clientWidth) / step()));
+    }
+    function sync(){
+      var max = rail.scrollWidth - rail.clientWidth - 2;
+      prev.disabled = rail.scrollLeft <= 2;
+      next.disabled = rail.scrollLeft >= max;
+    }
+    function go(dir){
+      idx = Math.max(0, Math.min(maxIdx(), idx + dir));
+      lock = true;
+      clearTimeout(lockT);
+      lockT = setTimeout(function(){ lock = false; }, 600);
+      rail.scrollTo({left: idx * step(), behavior: 'smooth'});
+    }
+
+    prev.addEventListener('click', function(){ go(-1); });
+    next.addEventListener('click', function(){ go(1); });
+    rail.addEventListener('scroll', function(){
+      sync();
+      if(!lock){ idx = Math.round(rail.scrollLeft / step()); }
+    }, {passive:true});
+    window.addEventListener('resize', function(){
+      idx = Math.round(rail.scrollLeft / step());
+      sync();
+    });
+    rail.addEventListener('keydown', function(e){
+      if(e.key === 'ArrowRight'){ e.preventDefault(); go(1); }
+      if(e.key === 'ArrowLeft'){ e.preventDefault(); go(-1); }
+    });
+    sync();
+  })();
+</script>
+
+</body>
+</html>
