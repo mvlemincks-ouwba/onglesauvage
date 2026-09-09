@@ -21,6 +21,7 @@ résultat manifestement cassé : le site conserve alors sa dernière version val
 """
 
 import argparse
+import datetime
 import html
 import json
 import os
@@ -256,6 +257,22 @@ def applique(source, avis, note, total):
     return resultat
 
 
+def maj_sitemap(chemin="sitemap.xml"):
+    """Aligne <lastmod> sur la date du jour. Sans effet si le fichier est absent."""
+    if not os.path.exists(chemin):
+        return False
+    with open(chemin, encoding="utf-8") as fichier:
+        source = fichier.read()
+    jour = datetime.date.today().isoformat()
+    nouveau = re.sub(r"<lastmod>[^<]*</lastmod>",
+                     "<lastmod>%s</lastmod>" % jour, source)
+    if nouveau == source:
+        return False
+    with open(chemin, "w", encoding="utf-8") as fichier:
+        fichier.write(nouveau)
+    return True
+
+
 def main():
     analyseur = argparse.ArgumentParser(description=__doc__,
                                         formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -312,6 +329,9 @@ def main():
                 fichier.write(nouveau)
             print("  %s : mis à jour" % chemin)
         modifies.append(chemin)
+
+    if modifies and not options.check and maj_sitemap():
+        print("  sitemap.xml : lastmod mis à jour")
 
     if balisees == 0:
         print("Aucune page balisée : ajoutez les repères <!-- avis:start --> et "
