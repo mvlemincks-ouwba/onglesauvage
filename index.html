@@ -271,14 +271,16 @@
     margin:16px auto 0;text-align:center;max-width:46ch;
     color:rgba(51,64,47,.6);font-size:15px;font-weight:300;line-height:1.7;
   }
-  .cards{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:clamp(14px,2vw,22px);margin-top:clamp(30px,3.6vw,50px);
+  .cards .card{
+    flex:0 0 clamp(236px,72vw,272px);scroll-snap-align:start;
   }
   .card{
     background:var(--cream);border-radius:220px 220px 24px 24px;
     padding:50px 30px 32px;text-align:center;
     border:1px dashed rgba(143,166,141,.55);
+    /* Toutes les cartes prennent la hauteur de la plus longue : on centre le
+       contenu pour que les courtes ne laissent pas un vide en bas. */
+    display:flex;flex-direction:column;justify-content:center;
   }
   .card-num{
     font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.2em;
@@ -639,7 +641,7 @@
         <h2>Prestations</h2>
         <p class="services-note">Durées et tarifs détaillés au moment de la réservation, sur Booksy.</p>
       </div>
-      <div class="cards">
+      <div class="cards rail-scroll" id="prestationsRail" tabindex="0" role="group" aria-label="Les prestations, défilement horizontal">
         <div class="card">
           <div class="card-num">01</div>
           <div class="card-title">Gel</div>
@@ -669,6 +671,13 @@
           <div class="card-num">06</div>
           <div class="card-title">Réparation</div>
           <p>Un ongle cassé ou décollé se répare, en gel comme en gel X.</p>
+        </div>
+      </div>
+      <div class="rail-foot">
+        <div class="rail-hint">6 prestations · faites défiler</div>
+        <div class="rail-nav">
+          <button class="rail-btn" type="button" data-rail="prev" data-target="prestationsRail" aria-label="Prestations précédentes">&#8592;</button>
+          <button class="rail-btn" type="button" data-rail="next" data-target="prestationsRail" aria-label="Prestations suivantes">&#8594;</button>
         </div>
       </div>
       <div class="center">
