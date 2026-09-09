@@ -425,6 +425,8 @@
   .footer-label{font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:rgba(246,242,232,.55)}
   .footer-value{margin-top:6px;font-size:16px;line-height:1.6;font-weight:300}
   .footer-value .soft{color:rgba(246,242,232,.6);font-size:14px}
+  .footer-value a{color:var(--cream);text-decoration:none;border-bottom:1px solid rgba(246,242,232,.4)}
+  .footer-value a:hover{border-color:var(--cream)}
   .footer-actions{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
   .footer-link{
     color:rgba(246,242,232,.78);text-decoration:none;font-size:12px;
@@ -692,11 +694,11 @@
         <span class="script">horaires</span>
         <h2>&amp; accès</h2>
         <ul class="hours-list">
-          <li><span>Matin</span><span>09:00 – 12:00</span></li>
-          <li><span>Après-midi</span><span>13:00 – 19:00</span></li>
+          <li><span>Lundi – vendredi</span><span>09:00 – 19:00</span></li>
+          <li><span>Samedi – dimanche</span><span>Fermé</span></li>
           <li><span>Rendez-vous</span><span>Booksy 24 h/24</span></li>
         </ul>
-        <p class="hours-note">Les jours d'ouverture varient : les créneaux réellement disponibles sont visibles en direct sur Booksy.</p>
+        <p class="hours-note">Les créneaux réellement disponibles sont visibles en direct sur Booksy.</p>
       </div>
       <div>
         <span class="script">un endroit</span>
@@ -706,6 +708,10 @@
           <li>
             <div class="label">Adresse</div>
             <div class="value">31 Rue du Port<br>33210 Castets et Castillon</div>
+          </li>
+          <li>
+            <div class="label">Téléphone</div>
+            <div class="value"><a href="tel:+33781855770">07 81 85 57 70</a></div>
           </li>
           <li>
             <div class="label">Paiement</div>
@@ -848,7 +854,9 @@
         <div class="footer-label">Adresse</div>
         <div class="footer-value">31 Rue du Port<br>33210 Castets et Castillon</div>
         <div class="footer-label" style="margin-top:22px">Horaires</div>
-        <div class="footer-value">09:00 – 12:00 · 13:00 – 19:00<br><span class="soft">Variables selon les jours, voir Booksy</span></div>
+        <div class="footer-value">Lundi – vendredi · 09:00 – 19:00<br><span class="soft">Réservation en ligne 24 h/24 sur Booksy</span></div>
+        <div class="footer-label" style="margin-top:22px">Téléphone</div>
+        <div class="footer-value"><a class="footer-tel" href="tel:+33781855770">07 81 85 57 70</a></div>
       </div>
       <div class="footer-actions">
         <a class="btn btn-pale" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener">Réserver sur Booksy</a>
@@ -879,6 +887,12 @@
     "addressCountry": "FR"
   },
   "telephone": "+33781855770",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "19:00"
+  },
   "priceRange": "€€",
   "paymentAccepted": "Espèces, Carte bancaire, Virement",
   "employee": {
