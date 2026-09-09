@@ -33,7 +33,8 @@ URL = os.environ.get("BOOKSY_URL", "https://booksy.com/fr-fr/"
                      "62614_ongle-sauvage_onglerie_80506_castillon-de-castets")
 
 # Pages du site à mettre à jour (celles qui existent sont traitées).
-CIBLES = ("index.html", "v2.html")
+# v1.html, l'ancienne version archivée, ne porte pas les repères et est ignorée.
+CIBLES = ("index.html",)
 
 # Garde-fous : en dessous de ce nombre d'avis extraits, on considère que la
 # structure de la page Booksy a changé et on préfère ne rien écrire.
@@ -218,10 +219,9 @@ def carte(avis):
 
 
 def bloc_cartes(avis):
-    cartes = "\n".join(carte(a) for a in avis[:MAX_CARTES])
-    return ('      <div class="reviews-rail" id="reviewsRail" tabindex="0" role="group"'
-            ' aria-label="Avis clientes, défilement horizontal">\n'
-            + cartes + "\n      </div>")
+    """Uniquement les cartes : le conteneur du carrousel, ses classes et ses
+    attributs d'accessibilité restent maintenus à la main dans le HTML."""
+    return "\n".join(carte(a) for a in avis[:MAX_CARTES])
 
 
 def note_fr(note):
@@ -241,7 +241,7 @@ def applique(source, avis, note, total):
     if debut == -1 or fin == -1 or fin < debut:
         raise PageNonBalisee("repères <!-- avis:start --> / <!-- avis:end --> absents")
     ouverture = resultat.find("-->", debut) + len("-->")
-    resultat = resultat[:ouverture] + "\n" + bloc_cartes(avis) + "\n      " + resultat[fin:]
+    resultat = resultat[:ouverture] + "\n" + bloc_cartes(avis) + "\n        " + resultat[fin:]
 
     resultat = re.sub(r"(<span data-avis-count>)[^<]*(</span>)",
                       lambda m: m.group(1) + str(total) + m.group(2), resultat)

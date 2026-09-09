@@ -2,12 +2,13 @@
 
 Site vitrine one-page pour **Ongle Sauvage**, onglerie et nail art à Castets et Castillon (Sud-Gironde).
 
-En ligne : https://mvlemincks-ouwba.github.io/onglesauvage/
+En ligne : https://onglesauvage.com/
 
 ## Contenu
 
-- `index.html` — la page complète (HTML + CSS, aucune dépendance à installer)
-- `v2.html` — refonte en cours : palette sauge / eucalyptus / beige, typographies Cormorant Garamond + Parisienne
+- `index.html` — le site (HTML + CSS, aucune dépendance à installer) : palette sauge / eucalyptus / beige, typographies Cormorant Garamond, Parisienne et Jost
+- `v1.html` — première version, en rose / nude, conservée pour mémoire (en `noindex`)
+- `CNAME` — le domaine servi par GitHub Pages. **Ne pas supprimer** : sans ce fichier, GitHub réinitialise le domaine personnalisé.
 - `assets/` — logo et photos des réalisations
 - `scripts/maj-avis.py` — synchronisation des avis Booksy
 - `.github/workflows/avis-booksy.yml` — exécution quotidienne de cette synchronisation
@@ -28,7 +29,7 @@ puis ouvrez http://localhost:8000.
 
 ## Design
 
-Maquette source : projet Claude Design « Ongle Sauvage » (design system ouwba). Typographies Anton et Inter Tight, palette rose / nude / encre.
+Maquette source : projet Claude Design « Ongle Sauvage » (design system ouwba). Typographies Cormorant Garamond, Parisienne et Jost ; palette sauge / eucalyptus / beige.
 
 ## Avis Booksy : mise à jour automatique
 
