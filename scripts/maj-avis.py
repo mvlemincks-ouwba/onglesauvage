@@ -72,8 +72,12 @@ class PageNonBalisee(RuntimeError):
 # limitation temporaire, erreur passagère de Booksy. On réessaie avant
 # d'abandonner, sinon le site remonterait une panne pour un incident d'une
 # seconde.
-TENTATIVES = 3
-ATTENTES = (5, 20)   # secondes avant la 2e puis la 3e tentative
+# Booksy renvoie parfois un 403 aux serveurs GitHub (adresses de centre de
+# données), pendant quelques minutes. Les attentes sont calées là-dessus :
+# quatre tentatives réparties sur environ quatre minutes absorbent un blocage
+# passager sans faire échouer la synchronisation du jour.
+TENTATIVES = 4
+ATTENTES = (10, 60, 180)   # secondes avant les tentatives 2, 3 et 4
 
 
 def telecharge(url=URL, tentatives=TENTATIVES):
