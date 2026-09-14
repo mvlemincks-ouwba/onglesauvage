@@ -27,6 +27,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.request
 
@@ -67,14 +68,43 @@ class PageNonBalisee(RuntimeError):
 # Récupération et extraction
 # --------------------------------------------------------------------------- #
 
-def telecharge(url=URL):
+# Une lecture peut échouer sans que rien ne soit cassé : coupure réseau,
+# limitation temporaire, erreur passagère de Booksy. On réessaie avant
+# d'abandonner, sinon le site remonterait une panne pour un incident d'une
+# seconde.
+TENTATIVES = 3
+ATTENTES = (5, 20)   # secondes avant la 2e puis la 3e tentative
+
+
+def telecharge(url=URL, tentatives=TENTATIVES):
     requete = urllib.request.Request(url, headers={
         "User-Agent": UA,
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "fr-FR,fr;q=0.9",
+        "Upgrade-Insecure-Requests": "1",
     })
-    with urllib.request.urlopen(requete, timeout=45) as reponse:
-        brut = reponse.read()
-    return brut.decode("utf-8", errors="replace")
+    derniere = None
+    for essai in range(1, tentatives + 1):
+        try:
+            with urllib.request.urlopen(requete, timeout=45) as reponse:
+                return reponse.read().decode("utf-8", errors="replace")
+        except urllib.error.HTTPError as erreur:
+            # Le corps de la réponse dit souvent pourquoi (blocage, limitation).
+            try:
+                extrait_corps = erreur.read(300).decode("utf-8", errors="replace")
+            except Exception:
+                extrait_corps = ""
+            derniere = "HTTP %s %s — %s" % (erreur.code, erreur.reason,
+                                            re.sub(r"\s+", " ", extrait_corps).strip()[:200])
+        except (urllib.error.URLError, OSError) as erreur:
+            derniere = "réseau : %s" % erreur
+
+        print("  tentative %d/%d échouée — %s" % (essai, tentatives, derniere),
+              file=sys.stderr)
+        if essai < tentatives:
+            time.sleep(ATTENTES[min(essai - 1, len(ATTENTES) - 1)])
+
+    raise ConnectionError(derniere)
 
 
 def note_et_total(page):
@@ -284,8 +314,11 @@ def main():
 
     try:
         page = telecharge()
-    except (urllib.error.URLError, urllib.error.HTTPError, OSError) as erreur:
-        print("Échec du téléchargement de la fiche Booksy : %s" % erreur, file=sys.stderr)
+    except ConnectionError as erreur:
+        print("Fiche Booksy inaccessible après %d tentatives : %s"
+              % (TENTATIVES, erreur), file=sys.stderr)
+        print("Incident d'accès, pas une modification du site. Le site garde "
+              "ses derniers avis ; la prochaine exécution réessaiera.", file=sys.stderr)
         return 1
 
     try:
@@ -293,6 +326,9 @@ def main():
         avis = extraits_avis(page)
     except ExtractionCassee as erreur:
         print("Extraction impossible : %s" % erreur, file=sys.stderr)
+        print("Page reçue : %d octets, %d bloc(s) d'avis détecté(s)."
+              % (len(page), len(page.split('data-testid="review-item"')) - 1),
+              file=sys.stderr)
         print("La page Booksy a probablement changé de structure. "
               "Le site n'a pas été modifié.", file=sys.stderr)
         return 1
