@@ -248,11 +248,6 @@
   /* Galerie */
   .gallery-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px}
   .gallery-head h2{font-size:clamp(30px,4.4vw,56px);text-transform:uppercase;letter-spacing:.05em;color:var(--forest)}
-  .gallery-head a{
-    font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;
-    color:var(--sage-deep);border-bottom:1px solid rgba(75,86,57,.5);padding-bottom:3px;
-  }
-  .gallery-head a:hover{color:var(--forest);border-color:var(--forest)}
   .gallery-rail .arch{
     flex:0 0 clamp(208px,62vw,268px);scroll-snap-align:start;aspect-ratio:3/4;
   }
@@ -447,13 +442,11 @@
     .social h2 a{display:inline-block;padding:8px 0}
     .footer-actions{gap:26px}
 
-    .gallery-head a,
     .rail-hint a,
     .info-list .value a,
     .footer-value a,
     .footer-link{position:relative}
 
-    .gallery-head a::after,
     .rail-hint a::after,
     .info-list .value a::after,
     .footer-value a::after,
@@ -592,7 +585,6 @@
     <div class="shell">
       <div class="gallery-head">
         <h2>Mes réalisations</h2>
-        <a href="https://www.instagram.com/ongle_sauvage/" target="_blank" rel="noopener" aria-label="Plus de photos sur Instagram (nouvel onglet)">Plus de photos sur Instagram ↗</a>
       </div>
       <div class="gallery-rail rail-scroll" id="galerieRail" tabindex="0" role="group" aria-label="Mes réalisations, défilement horizontal">
         <div class="arch">
@@ -666,6 +658,9 @@
           <button class="rail-btn" type="button" data-rail="prev" data-target="galerieRail" aria-label="Réalisations précédentes">&#8592;</button>
           <button class="rail-btn" type="button" data-rail="next" data-target="galerieRail" aria-label="Réalisations suivantes">&#8594;</button>
         </div>
+      </div>
+      <div class="center">
+        <a class="btn btn-ghost" href="https://www.instagram.com/ongle_sauvage/" target="_blank" rel="noopener" aria-label="Voir plus de réalisations sur Instagram (nouvel onglet)">Voir plus de réalisations ↗</a>
       </div>
     </div>
   </section>
@@ -1108,8 +1103,14 @@
         prev.disabled = rail.scrollLeft <= 2;
         next.disabled = rail.scrollLeft >= max;
       }
+      // Une pression avance d'une page de cartes entieres, pas d'une carte : a
+      // 1180px le rail en montre quatre, et avancer d'une seule obligeait a
+      // treize pressions pour traverser seize realisations.
+      function parPage(){
+        return Math.max(1, Math.floor(rail.clientWidth / step()));
+      }
       function go(dir){
-        idx = Math.max(0, Math.min(maxIdx(), idx + dir));
+        idx = Math.max(0, Math.min(maxIdx(), idx + dir * parPage()));
         lock = true;
         clearTimeout(lockT);
         lockT = setTimeout(function(){ lock = false; }, 600);
