@@ -143,6 +143,13 @@
     .brand img{width:28px;height:28px}
     .nav-cta .btn{padding:10px 14px;font-size:11px;letter-spacing:.1em;white-space:nowrap}
   }
+  /* La barre collante mesure 73px au plus — quand .nav-meta tient sur deux
+     lignes — et 65px une fois masquée sous 760px. Sans cette marge, un lien
+     de fragment comme « Voir le nail art » dépose la section à top:0 et la
+     barre en recouvre les 73 premiers pixels, titre compris. Toute nouvelle
+     section porteuse d'un id en hérite. */
+  main > section[id]{scroll-margin-top:88px}
+  @media (max-width:760px){main > section[id]{scroll-margin-top:78px}}
 
   /* Héro */
   .hero{padding:clamp(34px,4.5vw,72px) 24px clamp(46px,6vw,86px);text-align:center}
@@ -165,10 +172,6 @@
     font-size:clamp(24px,3.4vw,42px);line-height:1.15;margin:-.08em 0 0;
   }
   .hero-chips{justify-content:center;margin-top:20px}
-  .hero-note{
-    margin:14px 0 0;font-size:12.5px;letter-spacing:.04em;
-    color:rgba(51,64,47,.78);font-weight:300;
-  }
   .hero .lede{margin:22px auto 0;max-width:36ch;font-size:clamp(15px,1.4vw,17.5px)}
   .hero-place{
     margin:14px 0 0;font-size:11px;letter-spacing:.24em;text-transform:uppercase;
@@ -374,10 +377,15 @@
     display:grid;place-items:center;text-decoration:none;
     background:var(--forest);color:var(--cream);font-size:20px;line-height:1;
     box-shadow:0 6px 20px rgba(46,77,52,.22);
-    opacity:0;transform:translateY(10px);pointer-events:none;
-    transition:opacity .25s, transform .25s, background .18s;
+    opacity:0;transform:translateY(10px);pointer-events:none;visibility:hidden;
+    /* visibility, et pas seulement opacity : à opacity:0 le bouton restait
+       focalisable, donc une tabulation en fin de page s'arrêtait sur un lien
+       invisible et l'anneau de focus se dessinait sur du transparent.
+       visibility le sort de l'ordre de tabulation, et comme elle est dans la
+       transition elle ne bascule qu'à la fin du fondu. */
+    transition:opacity .25s, transform .25s, visibility .25s, background .18s;
   }
-  .to-top.visible{opacity:1;transform:none;pointer-events:auto}
+  .to-top.visible{opacity:1;transform:none;pointer-events:auto;visibility:visible}
   .to-top:hover{background:var(--sage-deep);color:var(--cream)}
   @media (max-width:560px){.to-top{width:44px;height:44px;font-size:18px}}
 
@@ -518,7 +526,6 @@
         <a class="btn btn-forest" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener" aria-label="Réserver sur Booksy (nouvel onglet)">Réserver sur Booksy ↗</a>
         <a class="btn btn-ghost" href="#nailart">Voir le nail art</a>
       </div>
-      <p class="hero-note">Disponibilités en direct · tarifs et durées sur Booksy</p>
       <div class="hero-strip">
         <div class="arch">
           <img src="assets/nailart-ambre-perles.jpg" alt="Nail art ambre et doré, reliefs dorés et perles" loading="lazy">
@@ -586,7 +593,7 @@
       <div class="gallery-head">
         <h2>Mes réalisations</h2>
       </div>
-      <div class="gallery-rail rail-scroll" id="galerieRail" tabindex="0" role="group" aria-label="Mes réalisations, défilement horizontal">
+      <div class="gallery-rail rail-scroll" id="galerieRail" tabindex="0" role="group" aria-label="Mes réalisations, défilement horizontal aux flèches gauche et droite">
         <div class="arch">
           <img src="assets/nailart-bleu-dore.jpg" alt="Nail art bleu nuit pailleté et doré chromé, orné de strass" loading="lazy">
           <div class="arch-label">Bleu nuit &amp; or</div>
@@ -672,7 +679,7 @@
         Prestations</h2>
         <p class="services-note">Durées et tarifs détaillés au moment de la réservation, sur Booksy.</p>
       </div>
-      <div class="cards rail-scroll" id="prestationsRail" tabindex="0" role="group" aria-label="Les prestations, défilement horizontal">
+      <div class="cards rail-scroll" id="prestationsRail" tabindex="0" role="group" aria-label="Les prestations, défilement horizontal aux flèches gauche et droite">
         <div class="card">
           <div class="card-num">01</div>
           <div class="card-title">Gel</div>
@@ -764,7 +771,7 @@
         <h2>Ce qu'on en dit</h2>
         <div class="reviews-score">★ <span data-avis-rating>5,0</span> sur <span data-avis-count>18</span> avis Booksy</div>
       </div>
-      <div class="reviews-rail rail-scroll" id="reviewsRail" tabindex="0" role="group" aria-label="Avis de la clientèle, défilement horizontal">
+      <div class="reviews-rail rail-scroll" id="reviewsRail" tabindex="0" role="group" aria-label="Avis de la clientèle, défilement horizontal aux flèches gauche et droite">
         <!-- avis:start — cartes régénérées par .github/workflows/avis-booksy.yml, ne pas éditer à la main -->
         <article class="review">
           <div class="quote">&ldquo;</div>
