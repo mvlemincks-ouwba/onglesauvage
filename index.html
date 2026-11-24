@@ -874,6 +874,12 @@
   </div>
 </footer>
 
+<!-- Donnees structurees. CONTRAINTE : une seule paire cle-valeur ratingValue et
+     une seule reviewCount dans tout ce fichier. scripts/maj-avis.py les reecrit par
+     re.sub global, sans count=, avec la note agregee de Booksy ; des objets Review
+     individuels porteurs de leur propre note seraient ecrases des le lendemain.
+     (Les deux noms sont volontairement cites ici sans guillemets ni deux-points,
+     pour que ce commentaire ne compte pas comme une occurrence.) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
