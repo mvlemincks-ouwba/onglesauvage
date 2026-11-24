@@ -1,0 +1,56 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-radius",
+        "value": "28px",
+        "createdAt": "2026-11-24T09:51:36.794Z",
+        "reason": "Claude, preuve : ce sont les coins bas des jetons d'arche documentes dans le bloc rounded: de DESIGN.md (999px 999px Npx Npx). Le detecteur compare chaque coin isolement a une echelle de rayons uniformes ; ce systeme est explicitement asymetrique."
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "18px",
+        "createdAt": "2026-11-24T09:51:36.808Z",
+        "reason": "Claude, preuve : ce sont les coins bas des jetons d'arche documentes dans le bloc rounded: de DESIGN.md (999px 999px Npx Npx). Le detecteur compare chaque coin isolement a une echelle de rayons uniformes ; ce systeme est explicitement asymetrique."
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "24px",
+        "createdAt": "2026-11-24T09:51:36.822Z",
+        "reason": "Claude, preuve : ce sont les coins bas des jetons d'arche documentes dans le bloc rounded: de DESIGN.md (999px 999px Npx Npx). Le detecteur compare chaque coin isolement a une echelle de rayons uniformes ; ce systeme est explicitement asymetrique."
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "26px",
+        "createdAt": "2026-11-24T09:51:36.835Z",
+        "reason": "Claude, preuve : ce sont les coins bas des jetons d'arche documentes dans le bloc rounded: de DESIGN.md (999px 999px Npx Npx). Le detecteur compare chaque coin isolement a une echelle de rayons uniformes ; ce systeme est explicitement asymetrique."
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "20px",
+        "createdAt": "2026-11-24T09:51:36.850Z",
+        "reason": "Claude, preuve : ce sont les coins bas des jetons d'arche documentes dans le bloc rounded: de DESIGN.md (999px 999px Npx Npx). Le detecteur compare chaque coin isolement a une echelle de rayons uniformes ; ce systeme est explicitement asymetrique."
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-24T09:52:01.590Z",
+        "reason": "Claude, preuve : #f6f2e8 est 'creme-de-lin' dans le frontmatter de DESIGN.md et --cream dans :root. La regle vise un fond de remplissage non decide ; celui-ci est decide et documente. Portee sans risque : il n'y a qu'un fond de page."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-24T09:52:01.610Z",
+        "reason": "Claude, preuve mesuree : la regle remonte 6 constats sur le scan fichier et zero sur les scans URL en 1440x900 et 390x844. Le parseur statique ne resout ni var(--block) = clamp(58px,7vw,110px) ni les clamp de .hours-card ; tout le padding du projet est ecrit ainsi."
+      }
+    ]
+  }
+}
