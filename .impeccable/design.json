@@ -1,0 +1,408 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-24T09:14:12Z",
+  "title": "Design System: Ongle Sauvage",
+  "extensions": {
+    "colorMeta": {
+      "vert-sous-bois": {
+        "role": "primary",
+        "displayName": "Vert Sous-Bois",
+        "canonical": "oklch(38.8% 0.056 149.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.027 149.4)",
+          "oklch(26.4% 0.044 149.4)",
+          "oklch(37.9% 0.056 149.4)",
+          "oklch(49.3% 0.056 149.4)",
+          "oklch(60.7% 0.056 149.4)",
+          "oklch(72.1% 0.046 149.4)",
+          "oklch(83.6% 0.030 149.4)",
+          "oklch(95.0% 0.009 149.4)"
+        ]
+      },
+      "sauge-poudree": {
+        "role": "primary",
+        "displayName": "Sauge Poudrée",
+        "canonical": "oklch(73.9% 0.056 123.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.035 123.8)",
+          "oklch(26.4% 0.056 123.8)",
+          "oklch(37.9% 0.056 123.8)",
+          "oklch(49.3% 0.056 123.8)",
+          "oklch(60.7% 0.056 123.8)",
+          "oklch(72.1% 0.056 123.8)",
+          "oklch(83.6% 0.038 123.8)",
+          "oklch(95.0% 0.012 123.8)"
+        ]
+      },
+      "sauge-brumeuse": {
+        "role": "secondary",
+        "displayName": "Sauge Brumeuse",
+        "canonical": "oklch(70.0% 0.044 142.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.025 142.9)",
+          "oklch(26.4% 0.040 142.9)",
+          "oklch(37.9% 0.044 142.9)",
+          "oklch(49.3% 0.044 142.9)",
+          "oklch(60.7% 0.044 142.9)",
+          "oklch(72.1% 0.042 142.9)",
+          "oklch(83.6% 0.027 142.9)",
+          "oklch(95.0% 0.009 142.9)"
+        ]
+      },
+      "eucalyptus-clair": {
+        "role": "secondary",
+        "displayName": "Eucalyptus Clair",
+        "canonical": "oklch(82.5% 0.045 135.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.039 135.9)",
+          "oklch(26.4% 0.045 135.9)",
+          "oklch(37.9% 0.045 135.9)",
+          "oklch(49.3% 0.045 135.9)",
+          "oklch(60.7% 0.045 135.9)",
+          "oklch(72.1% 0.045 135.9)",
+          "oklch(83.6% 0.043 135.9)",
+          "oklch(95.0% 0.014 135.9)"
+        ]
+      },
+      "ecume-de-serre": {
+        "role": "secondary",
+        "displayName": "Écume de Serre",
+        "canonical": "oklch(94.4% 0.026 138.3)",
+        "tonalRamp": [
+          "oklch(15.0% 0.026 138.3)",
+          "oklch(26.4% 0.026 138.3)",
+          "oklch(37.9% 0.026 138.3)",
+          "oklch(49.3% 0.026 138.3)",
+          "oklch(60.7% 0.026 138.3)",
+          "oklch(72.1% 0.026 138.3)",
+          "oklch(83.6% 0.026 138.3)",
+          "oklch(95.0% 0.024 138.3)"
+        ]
+      },
+      "argile": {
+        "role": "tertiary",
+        "displayName": "Argile",
+        "canonical": "oklch(79.1% 0.033 73.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.025 73.4)",
+          "oklch(26.4% 0.033 73.4)",
+          "oklch(37.9% 0.033 73.4)",
+          "oklch(49.3% 0.033 73.4)",
+          "oklch(60.7% 0.033 73.4)",
+          "oklch(72.1% 0.033 73.4)",
+          "oklch(83.6% 0.027 73.4)",
+          "oklch(95.0% 0.008 73.4)"
+        ]
+      },
+      "creme-de-lin": {
+        "role": "neutral",
+        "displayName": "Crème de Lin",
+        "canonical": "oklch(96.2% 0.014 88.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.014 88.7)",
+          "oklch(26.4% 0.014 88.7)",
+          "oklch(37.9% 0.014 88.7)",
+          "oklch(49.3% 0.014 88.7)",
+          "oklch(60.7% 0.014 88.7)",
+          "oklch(72.1% 0.014 88.7)",
+          "oklch(83.6% 0.014 88.7)",
+          "oklch(95.0% 0.014 88.7)"
+        ]
+      },
+      "sable": {
+        "role": "neutral",
+        "displayName": "Sable",
+        "canonical": "oklch(93.0% 0.021 81.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.021 81.8)",
+          "oklch(26.4% 0.021 81.8)",
+          "oklch(37.9% 0.021 81.8)",
+          "oklch(49.3% 0.021 81.8)",
+          "oklch(60.7% 0.021 81.8)",
+          "oklch(72.1% 0.021 81.8)",
+          "oklch(83.6% 0.021 81.8)",
+          "oklch(95.0% 0.015 81.8)"
+        ]
+      },
+      "encre-vegetale": {
+        "role": "neutral",
+        "displayName": "Encre Végétale",
+        "canonical": "oklch(35.4% 0.033 138.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.017 138.4)",
+          "oklch(26.4% 0.027 138.4)",
+          "oklch(37.9% 0.033 138.4)",
+          "oklch(49.3% 0.033 138.4)",
+          "oklch(60.7% 0.033 138.4)",
+          "oklch(72.1% 0.029 138.4)",
+          "oklch(83.6% 0.018 138.4)",
+          "oklch(95.0% 0.006 138.4)"
+        ]
+      },
+      "blanc": {
+        "role": "neutral",
+        "displayName": "Blanc",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 89.9)",
+          "oklch(26.4% 0.000 89.9)",
+          "oklch(37.9% 0.000 89.9)",
+          "oklch(49.3% 0.000 89.9)",
+          "oklch(60.7% 0.000 89.9)",
+          "oklch(72.1% 0.000 89.9)",
+          "oklch(83.6% 0.000 89.9)",
+          "oklch(95.0% 0.000 89.9)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Le nom du salon dans le héros, et lui seul."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Les titres de section, toujours précédés d'une amorce manuscrite."
+      },
+      "script": {
+        "displayName": "Amorce manuscrite",
+        "purpose": "Parisienne, uniquement au-dessus d'un titre, en chevauchement négatif."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Titres de carte, questions de la FAQ, nom de marque dans l'en-tête."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraphes en Jost 300, jamais au-delà de 46 caractères par ligne."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Sur-titres et repères : c'est l'espacement des lettres, pas la taille, qui signale le registre."
+      }
+    },
+    "shadows": [
+      {
+        "name": "flottant",
+        "value": "0 6px 20px rgba(46,77,52,.22)",
+        "purpose": "La seule ombre du système, sous le bouton de retour en haut. Teintée en vert, jamais en noir."
+      }
+    ],
+    "motion": [
+      {
+        "name": "transition-etat",
+        "value": "180ms",
+        "purpose": "Durée par défaut des changements de fond, de texte et de filet sur les composants interactifs."
+      },
+      {
+        "name": "transition-apparition",
+        "value": "250ms",
+        "purpose": "Apparition et disparition du bouton flottant de retour en haut."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "@media (prefers-reduced-motion:reduce){*{transition:none !important}}",
+        "purpose": "Toutes les transitions et le défilement doux sont coupés net pour qui le demande."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "grilles",
+        "value": "820px"
+      },
+      {
+        "name": "en-tete-meta",
+        "value": "760px"
+      },
+      {
+        "name": "galerie",
+        "value": "600px"
+      },
+      {
+        "name": "compact",
+        "value": "560px"
+      }
+    ],
+    "layout": {
+      "shell": "1180px",
+      "gutter": "24px",
+      "block": "clamp(58px, 7vw, 110px)"
+    },
+    "unusedTokens": [
+      {
+        "name": "--moss",
+        "value": "#4a5d23",
+        "note": "Déclarée dans :root, utilisée zéro fois. À ne pas réveiller."
+      },
+      {
+        "name": "--mint",
+        "value": "#c8dcc2",
+        "note": "Déclarée dans :root, utilisée zéro fois. À ne pas réveiller."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Bouton principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "L'appel à la réservation. Présent dans l'en-tête, le héros, les prestations et le pied de page.",
+      "html": "<a class=\"ds-btn ds-btn-sage\" href=\"#\">Réserver sur Booksy</a>",
+      "css": ".ds-btn{display:inline-block;text-decoration:none;border:none;cursor:pointer;border-radius:999px;padding:15px 30px;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:.14em;transition:background .18s,color .18s,border-color .18s}.ds-btn:focus-visible{outline:2px solid var(--dusty, #8fa68d);outline-offset:3px}.ds-btn-sage{background:var(--sage, #a3b18a);color:#fff}.ds-btn-sage:hover{background:var(--forest, #2e4d34);color:#fff}"
+    },
+    {
+      "name": "Bouton sous-bois",
+      "kind": "button",
+      "refersTo": "button-forest",
+      "description": "L'appel secondaire sur fond clair.",
+      "html": "<a class=\"ds-btn ds-btn-forest\" href=\"#\">Voir tous les tarifs</a>",
+      "css": ".ds-btn{display:inline-block;text-decoration:none;border:none;cursor:pointer;border-radius:999px;padding:15px 30px;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:.14em;transition:background .18s,color .18s,border-color .18s}.ds-btn:focus-visible{outline:2px solid var(--dusty, #8fa68d);outline-offset:3px}.ds-btn-forest{background:var(--forest, #2e4d34);color:var(--cream, #f6f2e8)}.ds-btn-forest:hover{background:var(--sage, #a3b18a);color:#fff}"
+    },
+    {
+      "name": "Bouton pâle",
+      "kind": "button",
+      "refersTo": "button-pale",
+      "description": "Le seul bouton autorisé sur une section sombre, où les deux autres disparaîtraient.",
+      "html": "<a class=\"ds-btn ds-btn-pale\" href=\"#\">Parler de votre projet</a>",
+      "css": ".ds-btn{display:inline-block;text-decoration:none;border:none;cursor:pointer;border-radius:999px;padding:15px 30px;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:.14em;transition:background .18s,color .18s,border-color .18s}.ds-btn:focus-visible{outline:2px solid var(--dusty, #8fa68d);outline-offset:3px}.ds-btn-pale{background:var(--seafoam, #e4f1e0);color:var(--forest, #2e4d34)}.ds-btn-pale:hover{background:#fff}"
+    },
+    {
+      "name": "Bouton fantôme",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Le second choix d'une paire : filet d'un pixel, aucun fond.",
+      "html": "<a class=\"ds-btn ds-btn-ghost\" href=\"#\">Voir le nail art</a>",
+      "css": ".ds-btn{display:inline-block;text-decoration:none;border:none;cursor:pointer;border-radius:999px;padding:15px 30px;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:.14em;transition:background .18s,color .18s,border-color .18s}.ds-btn:focus-visible{outline:2px solid var(--dusty, #8fa68d);outline-offset:3px}.ds-btn-ghost{background:transparent;color:var(--ink, #33402f);border:1px solid rgba(51,64,47,.22);padding:14px 28px}.ds-btn-ghost:hover{border-color:var(--forest, #2e4d34);background:rgba(255,255,255,.5)}"
+    },
+    {
+      "name": "Puce",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Étiquette descriptive, jamais interactive. Sert à lister les techniques.",
+      "html": "<span class=\"ds-chip\">Dessins à la main</span><span class=\"ds-chip\">Dégradés</span><span class=\"ds-chip\">Strass &amp; reliefs</span>",
+      "css": ".ds-chip{display:inline-block;border-radius:999px;padding:9px 18px;margin:0 9px 9px 0;font-size:13px;font-weight:400;letter-spacing:.06em;font-family:'Jost',system-ui,sans-serif;background:#fff;color:var(--ink, #33402f);border:1px solid rgba(51,64,47,.08)}"
+    },
+    {
+      "name": "Carte de prestation",
+      "kind": "card",
+      "refersTo": "card-service",
+      "description": "Carte en arche, numérotée, au filet tireté. C'est le tiret qui la distingue d'une carte d'avis.",
+      "html": "<div class=\"ds-card-service\"><div class=\"ds-card-num\">02</div><div class=\"ds-card-title\">Pose américaine / gel X</div><p>Des capsules en gel pour des ongles longs et élégants, au résultat naturel et solide.</p></div>",
+      "css": ".ds-card-service{width:272px;background:var(--cream, #f6f2e8);border-radius:220px 220px 24px 24px;padding:50px 30px 32px;text-align:center;border:1px dashed rgba(143,166,141,.55);display:flex;flex-direction:column;justify-content:center;font-family:'Jost',system-ui,sans-serif}.ds-card-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;letter-spacing:.2em;color:var(--sage, #a3b18a)}.ds-card-title{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;text-transform:uppercase;letter-spacing:.09em;font-size:22px;color:var(--forest, #2e4d34);margin-top:8px}.ds-card-service p{margin:12px 0 0;color:rgba(51,64,47,.66);font-size:14.5px;line-height:1.7;font-weight:300}"
+    },
+    {
+      "name": "Carte d'avis",
+      "kind": "card",
+      "refersTo": "card-review",
+      "description": "Carte en arche plus basse, sans bordure, texte tronqué à six lignes. Régénérée chaque jour depuis Booksy.",
+      "html": "<div class=\"ds-card-review\"><div class=\"ds-quote\">&ldquo;</div><p>Très professionnelle, minutieuse et à l'écoute. Le résultat correspond parfaitement à mes attentes.</p><div class=\"ds-review-name\">Margaux</div><div class=\"ds-review-service\">Pose Gel X classique</div></div>",
+      "css": ".ds-card-review{width:320px;background:var(--cream, #f6f2e8);border-radius:160px 160px 24px 24px;padding:44px 30px 30px;text-align:center;display:flex;flex-direction:column;justify-content:center;font-family:'Jost',system-ui,sans-serif}.ds-quote{font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;color:var(--sage, #a3b18a);line-height:.6}.ds-card-review p{margin:14px 0 0;font-size:15px;line-height:1.75;font-weight:300;color:rgba(51,64,47,.82);display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}.ds-review-name{margin-top:20px;font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;text-transform:uppercase;letter-spacing:.14em;color:var(--forest, #2e4d34)}.ds-review-service{margin-top:3px;font-size:12px;letter-spacing:.1em;color:rgba(51,64,47,.5)}"
+    },
+    {
+      "name": "Photo en arche",
+      "kind": "custom",
+      "refersTo": "arch-label",
+      "description": "Le composant signature : une réalisation cadrée en arche, étiquette en pilule translucide au centre bas.",
+      "html": "<figure class=\"ds-arch\"><img src=\"assets/nailart-vitrail.jpg\" alt=\"Nail art vitrail\"><figcaption class=\"ds-arch-label\">Vitrail</figcaption></figure>",
+      "css": ".ds-arch{position:relative;margin:0;width:230px;aspect-ratio:3/4;border-radius:999px 999px 28px 28px;overflow:hidden;background:var(--sand, #efe7d9)}.ds-arch img{width:100%;height:100%;object-fit:cover;display:block}.ds-arch-label{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);background:rgba(46,77,52,.86);color:var(--cream, #f6f2e8);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);font-family:'Jost',system-ui,sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:7px 16px;border-radius:999px;white-space:nowrap;max-width:calc(100% - 20px);overflow:hidden;text-overflow:ellipsis}"
+    },
+    {
+      "name": "Flèches de rail",
+      "kind": "nav",
+      "refersTo": "rail-button",
+      "description": "Les deux flèches qui pilotent un carrousel. Elles tombent à 30 % d'opacité quand le rail est au bout.",
+      "html": "<div class=\"ds-rail-nav\"><button class=\"ds-rail-btn\" aria-label=\"Précédent\">&#8592;</button><button class=\"ds-rail-btn\" aria-label=\"Suivant\">&#8594;</button><button class=\"ds-rail-btn\" disabled aria-label=\"Fin du rail\">&#8594;</button></div>",
+      "css": ".ds-rail-nav{display:flex;gap:10px}.ds-rail-btn{width:44px;height:44px;border-radius:999px;cursor:pointer;background:transparent;border:1px solid rgba(46,77,52,.35);color:var(--forest, #2e4d34);font-size:17px;line-height:1;display:grid;place-items:center;transition:background .18s,border-color .18s,opacity .18s}.ds-rail-btn:hover{background:var(--cream, #f6f2e8);border-color:var(--forest, #2e4d34)}.ds-rail-btn:focus-visible{outline:2px solid var(--dusty, #8fa68d);outline-offset:3px}.ds-rail-btn[disabled]{opacity:.3;cursor:default}.ds-rail-btn[disabled]:hover{background:transparent;border-color:rgba(46,77,52,.35)}"
+    },
+    {
+      "name": "Carte des horaires",
+      "kind": "custom",
+      "refersTo": "card-hours",
+      "description": "La grande arche pleine en Sauge Poudrée qui porte les horaires, avec des filets blancs translucides entre les lignes.",
+      "html": "<div class=\"ds-hours\"><span class=\"ds-script\">horaires</span><h2>&amp; accès</h2><ul class=\"ds-hours-list\"><li><span>Lundi – vendredi</span><span>09:00 – 19:00</span></li><li><span>Samedi – dimanche</span><span>Fermé</span></li></ul></div>",
+      "css": ".ds-hours{background:var(--sage, #a3b18a);color:#fff;border-radius:240px 240px 26px 26px;padding:56px 34px 36px;text-align:center;max-width:400px;font-family:'Jost',system-ui,sans-serif}.ds-hours .ds-script{font-family:'Parisienne',cursive;color:rgba(255,255,255,.82);font-size:34px;display:block;line-height:1.1;margin-bottom:-.2em}.ds-hours h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:28px;text-transform:uppercase;letter-spacing:.14em;color:#fff;margin:0}.ds-hours-list{margin:26px 0 0;padding:0;list-style:none}.ds-hours-list li{display:flex;justify-content:space-between;gap:14px;padding:11px 0;font-size:14px;font-weight:300;letter-spacing:.04em;border-top:1px solid rgba(255,255,255,.24)}.ds-hours-list li:last-child{border-bottom:1px solid rgba(255,255,255,.24)}.ds-hours-list span:first-child{text-transform:uppercase;letter-spacing:.12em;font-size:12px;padding-top:2px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "La Serre",
+    "overview": "Une serre a trois choses : une palette de feuillage, une lumière filtrée, et des arches. Ce système emprunte les trois. Les neuf teintes vont du sous-bois à la crème de lin sans jamais sortir du végétal, les fonds restent clairs et mats, et l'arche coiffe chaque photographie de réalisation. Cette arche n'est pas un ornement emprunté : c'est exactement la silhouette d'un ongle en amande. La forme du produit et la forme de la page sont la même, ce qui est la raison pour laquelle le motif peut se répéter dix fois sans lasser.\n\nL'atmosphère est calme, botanique, aérée. Les sections respirent jusqu'à 110px de souffle vertical, les paragraphes ne dépassent pas 46 caractères par ligne, et la page ne bouge pratiquement pas : le seul mouvement est le défilement des rails, la seule ombre tient sous un bouton flottant. Rien ne presse la visiteuse, alors même que la page a un objectif de conversion unique.\n\nLes composants sont raffinés et retenus : des pilules, des bordures d'un pixel, des capitales très espacées, des transitions de 180 ms. Ils s'effacent devant les photographies, qui sont la vraie matière du site. La version précédente, en rose et nude (v1.html, conservée en noindex), a été remplacée par ce monde : elle sert d'anti-référence.",
+    "keyCharacteristics": [
+      "Neuf teintes végétales, du sous-bois à la crème de lin, aucune couleur hors palette",
+      "L'arche en haut de chaque image, écho de la silhouette de l'ongle",
+      "Des bandes de fond qui changent à chaque section, et pas une seule ombre sur le contenu",
+      "Cormorant Garamond en capitales espacées pour les titres, Parisienne en amorce manuscrite",
+      "Jost en graisse 300 pour le texte courant, en 500 capitales pour les repères"
+    ],
+    "rules": [
+      {
+        "name": "La règle de la bande",
+        "section": "colors",
+        "body": "Deux sections voisines ne portent jamais le même fond. La page descend en bandes — crème, sable, sous-bois, crème, écume, crème, eucalyptus, crème, sable, sous-bois — et c'est ce rythme qui remplace les séparateurs."
+      },
+      {
+        "name": "La règle du vert unique",
+        "section": "colors",
+        "body": "Aucune couleur hors du végétal n'entre dans la palette. Un besoin de contraste se résout en changeant de valeur dans la famille, pas en important un accent étranger."
+      },
+      {
+        "name": "La règle des trois voix",
+        "section": "typography",
+        "body": "Cormorant pour les titres, Parisienne pour l'amorce, Jost pour tout le reste. Une quatrième police n'entre pas, et aucune des trois ne prend le rôle d'une autre."
+      },
+      {
+        "name": "La règle de l'amorce",
+        "section": "typography",
+        "body": "Parisienne ne sert qu'à l'amorce au-dessus d'un titre. Jamais un paragraphe, jamais un bouton, jamais une étiquette."
+      },
+      {
+        "name": "La règle de l'espacement avant la taille",
+        "section": "typography",
+        "body": "Pour hiérarchiser deux textes courts, on écarte les lettres plutôt que d'agrandir le corps. Le pied de page et l'en-tête tiennent entièrement sur cette règle."
+      },
+      {
+        "name": "La règle de la coquille",
+        "section": "layout",
+        "body": "Un fond traverse toute la largeur, un contenu jamais. Toute section ajoutée reprend --shell et --block avant d'inventer son propre espacement."
+      },
+      {
+        "name": "La règle du plat par défaut",
+        "section": "elevation",
+        "body": "Une ombre n'est permise que sous un élément qui flotte au-dessus du contenu. Un élément dans le flux ne porte pas d'ombre : il change de fond."
+      },
+      {
+        "name": "La règle de l'ombre verte",
+        "section": "elevation",
+        "body": "Si une ombre doit exister, elle est teintée dans la palette (rgba(46,77,52,…)), jamais en noir neutre."
+      },
+      {
+        "name": "La règle de l'arche",
+        "section": "shapes",
+        "body": "Toute image de réalisation est cadrée en arche, sans exception. Une photo à coins droits ne ressemble plus à un ongle."
+      },
+      {
+        "name": "La règle de la pilule",
+        "section": "shapes",
+        "body": "Ce qui se clique est une pilule complète. Un rayon intermédiaire sur un bouton n'existe pas dans ce système."
+      }
+    ],
+    "dos": [
+      "Do cadrer toute photo de réalisation en arche (--arch), et poser son étiquette en pilule translucide au centre bas.",
+      "Do faire précéder chaque titre de section d'une amorce Parisienne en chevauchement négatif.",
+      "Do changer de fond à chaque section, en suivant la bande déjà en place.",
+      "Do reprendre --shell et --block pour toute section ajoutée, avant d'inventer un espacement local.",
+      "Do teinter une ombre dans la palette si elle est inévitable, et la réserver à un élément flottant.",
+      "Do hiérarchiser deux textes courts par l'espacement des lettres plutôt que par le corps.",
+      "Do laisser les rails fonctionner au doigt et au défilement natif : les flèches sont un supplément, pas la seule porte d'entrée."
+    ],
+    "donts": [
+      "Don't mettre une ombre sous une carte, une photo ou l'en-tête. La profondeur passe par la couleur.",
+      "Don't introduire une couleur hors palette végétale, ni réveiller --moss (#4a5d23) et --mint (#c8dcc2), qui sont déclarées mais inutilisées.",
+      "Don't utiliser Parisienne ailleurs que dans une amorce de titre.",
+      "Don't ajouter une quatrième famille de caractères.",
+      "Don't donner un rayon intermédiaire à un bouton : c'est une pilule complète ou rien.",
+      "Don't poser un bouton Sauge Poudrée ou Vert Sous-Bois sur une section sombre — c'est le rôle du bouton pâle.",
+      "Don't ajouter un menu de navigation : l'en-tête ne porte qu'une action.",
+      "Don't reprendre quoi que ce soit du rose et nude de v1.html, qui est l'anti-référence de ce système."
+    ]
+  }
+}
