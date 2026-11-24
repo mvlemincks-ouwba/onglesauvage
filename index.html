@@ -874,12 +874,12 @@
   </div>
 </footer>
 
-<!-- Donnees structurees. CONTRAINTE : une seule paire cle-valeur ratingValue et
-     une seule reviewCount dans tout ce fichier. scripts/maj-avis.py les reecrit par
-     re.sub global, sans count=, avec la note agregee de Booksy ; des objets Review
-     individuels porteurs de leur propre note seraient ecrases des le lendemain.
-     (Les deux noms sont volontairement cites ici sans guillemets ni deux-points,
-     pour que ce commentaire ne compte pas comme une occurrence.) -->
+<!-- Données structurées. CONTRAINTE : une seule paire clé-valeur ratingValue et
+     une seule reviewCount dans tout ce fichier. scripts/maj-avis.py les réécrit par
+     re.sub global, sans count=, avec la note agrégée de Booksy ; des objets Review
+     individuels porteurs de leur propre note seraient écrasés dès le lendemain.
+     Le motif du script exige les deux-points collés au nom, donc ce commentaire ne
+     le déclenche pas — un grep -c nu, lui, comptera bien deux mentions. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
