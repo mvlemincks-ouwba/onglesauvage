@@ -54,9 +54,9 @@ Points à connaître :
 
 - **Ne pas modifier à la main** le bloc entre les deux repères : il est écrasé
   à chaque exécution.
-- Le carrousel affiche les **10 avis les plus récents** (ceux servis sur la
-  première page Booksy) ; la note et le nombre total portent bien sur
-  l'ensemble des avis.
+- Le carrousel affiche **au plus 12 avis** (`MAX_CARTES` dans le script), pris
+  parmi les plus récents que sert la première page Booksy — 9 aujourd'hui ; la
+  note et le nombre total portent bien sur l'ensemble des avis.
 - Si Booksy change la structure de ses pages, le script **échoue sans rien
   écrire** : le site conserve ses derniers avis valides et GitHub envoie un
   mail d'échec du workflow.
