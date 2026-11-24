@@ -4,7 +4,8 @@ description: Onglerie et nail art en Sud-Gironde — une serre végétale où ch
 colors:
   vert-sous-bois: "#2e4d34"
   sauge-poudree: "#a3b18a"
-  sauge-brumeuse: "#8fa68d"
+  sauge-intermediaire: "#798a5c"
+  sauge-profonde: "#4b5639"
   eucalyptus-clair: "#b9cdb0"
   ecume-de-serre: "#e4f1e0"
   creme-de-lin: "#f6f2e8"
@@ -61,22 +62,14 @@ spacing:
   block: "clamp(58px, 7vw, 110px)"
 components:
   button-primary:
-    backgroundColor: "{colors.sauge-poudree}"
-    textColor: "{colors.blanc}"
-    rounded: "{rounded.pill}"
-    padding: "15px 30px"
-    typography: "{typography.label}"
-  button-primary-hover:
-    backgroundColor: "{colors.vert-sous-bois}"
-    textColor: "{colors.blanc}"
-  button-forest:
     backgroundColor: "{colors.vert-sous-bois}"
     textColor: "{colors.creme-de-lin}"
     rounded: "{rounded.pill}"
     padding: "15px 30px"
-  button-forest-hover:
-    backgroundColor: "{colors.sauge-poudree}"
-    textColor: "{colors.blanc}"
+    typography: "{typography.label}"
+  button-primary-hover:
+    backgroundColor: "{colors.sauge-profonde}"
+    textColor: "{colors.creme-de-lin}"
   button-pale:
     backgroundColor: "{colors.ecume-de-serre}"
     textColor: "{colors.vert-sous-bois}"
@@ -102,8 +95,8 @@ components:
     rounded: "{rounded.review}"
     padding: "44px 30px 30px"
   card-hours:
-    backgroundColor: "{colors.sauge-poudree}"
-    textColor: "{colors.blanc}"
+    backgroundColor: "{colors.vert-sous-bois}"
+    textColor: "{colors.creme-de-lin}"
     rounded: "{rounded.hours}"
   arch-label:
     textColor: "{colors.creme-de-lin}"
@@ -143,12 +136,13 @@ Une palette entièrement végétale : deux verts porteurs, trois verts d'ambianc
 ### Primary
 
 - **Vert Sous-Bois** (#2e4d34) : la couleur porteuse, de loin la plus employée. Tous les titres de section, le nom de la marque, les fonds des deux sections sombres (nail art et pied de page), et le texte des liens.
-- **Sauge Poudrée** (#a3b18a) : l'accent actif. Le bouton principal, l'étiquette du héros, le fond de la carte des horaires, le bouton de retour en haut, les numéros de prestation, le guillemet des avis et le `+` de la FAQ.
+- **Sauge Poudrée** (#a3b18a) : rétrogradée au décor. Blanc sur Sauge Poudrée ne donnait que 2,28:1, donc elle a perdu tous ses rôles d'action ; il ne lui reste que la bordure tiretée des cartes de prestation. Elle n'habille plus jamais un élément qui porte du texte.
+- **Sauge Profonde** (#4b5639) : le registre des petits textes fonctionnels. Sur-titres, intitulés, numéros de prestation, marqueur de la FAQ, liens secondaires, étoiles de notation, et le survol du bouton principal. Au moins 4,62:1 sur chacun des fonds clairs du système.
+- **Sauge Intermédiaire** (#798a5c) : l'amorce manuscrite, et elle seule. Entre 3,05 et 3,35:1 sur les fonds clairs, ce qui tient parce que l'amorce est du grand texte — voir la règle du grand texte.
 
 ### Secondary
 
 - **Eucalyptus Clair** (#b9cdb0) : le fond de la section avis, la forme décorative derrière le portrait, l'amorce manuscrite quand elle se pose sur un fond sombre, et la couleur de sélection du texte.
-- **Sauge Brumeuse** (#8fa68d) : le registre discret. L'amorce manuscrite sur fond clair, les sur-titres, les intitulés de champ, et le contour de focus clavier.
 - **Écume de Serre** (#e4f1e0) : le fond de la section prestations et celui du bouton pâle posé sur les sections sombres.
 
 ### Tertiary
@@ -166,7 +160,9 @@ Une palette entièrement végétale : deux verts porteurs, trois verts d'ambianc
 
 **La règle de la bande.** Deux sections voisines ne portent jamais le même fond. La page descend en bandes — crème, sable, sous-bois, crème, écume, crème, eucalyptus, crème, sable, sous-bois — et c'est ce rythme qui remplace les séparateurs.
 
-**La règle du vert unique.** Aucune couleur hors du végétal n'entre dans la palette. Un besoin de contraste se résout en changeant de valeur dans la famille, pas en important un accent étranger.
+**La règle du vert unique.** Aucune couleur hors du végétal n'entre dans la palette. Un besoin de contraste se résout en changeant de valeur dans la famille, pas en important un accent étranger. C'est exactement ce qui a produit Sauge Intermédiaire et Sauge Profonde : même teinte, valeur descendue jusqu'au seuil lisible.
+
+**La règle du plancher lisible.** Tout texte atteint 4,5:1, tout grand texte 3:1, et tout contrôle dont la bordure est le seul indice atteint 3:1. Un besoin esthétique de pâleur ne se paie pas sur un texte : il se paie sur une surface décorative, qui n'en porte pas.
 
 ## Typography
 
@@ -184,6 +180,10 @@ Une palette entièrement végétale : deux verts porteurs, trois verts d'ambianc
 - **Title** (500, 22px, capitales, +0.09em) : les titres de carte de prestation, les questions de la FAQ (21px) et le nom de la marque dans l'en-tête (21px, +0.16em).
 - **Body** (Jost 300, clamp 15→18px, interligne 1.75) : les paragraphes. Jamais au-delà de 46 caractères par ligne dans les blocs centrés, 44 dans les sections sombres.
 - **Label** (Jost 400–500, 11–12px, capitales, +0.14em à +0.30em) : les sur-titres, les intitulés, les indices de défilement, le pied de page. C'est l'espacement, pas la taille, qui signale le registre.
+
+### Named Rules
+
+**La règle du grand texte.** L'amorce manuscrite ne descend jamais sous 24px, parce que c'est le seuil à partir duquel un texte a droit au plancher de contraste de 3:1. En dessous, elle devrait atteindre 4,5:1 et perdrait sa légèreté. Sa taille est donc une contrainte d'accessibilité, pas un choix de composition.
 
 ### Named Rules
 
@@ -244,11 +244,10 @@ Les bordures sont toujours d'un pixel et toujours translucides, pour qu'elles pr
 ### Buttons
 
 - **Shape:** pilule complète (999px), texte en capitales Jost 500 à +0.14em, 14px.
-- **Primary (`btn-sage`):** fond Sauge Poudrée, texte blanc, 15px 30px de remplissage. Le bouton de réservation, partout.
-- **Forest (`btn-forest`):** fond Vert Sous-Bois, texte Crème de Lin. Pour les appels secondaires sur fond clair.
+- **Primary (`btn-forest`):** fond Vert Sous-Bois, texte Crème de Lin, 8,43:1, 15px 30px de remplissage. Le bouton de réservation, partout. C'est l'objet le plus sombre de la page : sur une surface dont l'unique métier est de faire prendre rendez-vous, l'action porte la valeur la plus forte du système.
 - **Pale (`btn-pale`):** fond Écume de Serre, texte Vert Sous-Bois. Uniquement sur les sections sombres, où les deux premiers disparaîtraient.
 - **Ghost (`btn-ghost`):** sans fond, filet `rgba(51,64,47,.22)`, 14px 28px. Le second choix d'une paire.
-- **Hover / Focus:** l'échange de fond entre Sauge Poudrée et Vert Sous-Bois, en 180 ms sur `background`, `color` et `border-color`. Le fantôme, lui, fonce son filet et prend un voile blanc. Le focus clavier est un contour Sauge Brumeuse de 2px décalé de 3px, hérité de `:focus-visible` au niveau du document.
+- **Hover / Focus:** le fond descend de Vert Sous-Bois vers Sauge Profonde, en 180 ms sur `background`, `color` et `border-color` — un survol qui s'éclaircit sans jamais passer sous 6,98:1. Le fantôme, lui, fonce son filet et prend un voile blanc. Le focus clavier est un contour Vert Sous-Bois de 2px décalé de 3px, hérité de `:focus-visible` au niveau du document.
 
 ### Chips
 
@@ -258,9 +257,9 @@ Les bordures sont toujours d'un pixel et toujours translucides, pour qu'elles pr
 ### Cards / Containers
 
 - **Corner Style:** arche, dont le rayon haut croît avec la taille de la carte (voir Shapes).
-- **Background:** Crème de Lin pour les cartes de prestation et d'avis, Sauge Poudrée pour la carte des horaires.
+- **Background:** Crème de Lin pour les cartes de prestation et d'avis, Vert Sous-Bois pour la carte des horaires — qui est donc la troisième surface sombre de la page, avec la section nail art et le pied.
 - **Shadow Strategy:** aucune. Voir Elevation & Depth.
-- **Border:** tiretée `rgba(143,166,141,.55)` sur les prestations, aucune sur les avis.
+- **Border:** tiretée en Sauge Poudrée sur les prestations, aucune sur les avis.
 - **Internal Padding:** généreux et asymétrique, plus épais en haut pour dégager la courbe de l'arche — 50px 30px 32px pour les prestations, 44px 30px 30px pour les avis.
 - **Behavior:** les cartes d'un même rail prennent la hauteur de la plus longue ; leur contenu est centré verticalement pour que les courtes ne laissent pas de vide.
 
@@ -294,10 +293,11 @@ Une photographie cadrée en arche, fond Sable en attente de chargement, avec une
 ### Don't:
 
 - **Don't** mettre une ombre sous une carte, une photo ou l'en-tête. La profondeur passe par la couleur.
-- **Don't** introduire une couleur hors palette végétale, ni réveiller `--moss` (#4a5d23) et `--mint` (#c8dcc2), qui sont déclarées mais inutilisées.
+- **Don't** introduire une couleur hors palette végétale. `--moss` et `--mint`, déclarées et jamais utilisées, ont été retirées de `:root` ; ne les y remettez pas.
+- **Don't** poser du texte sur Sauge Poudrée, ni du blanc sur une sauge quelconque. C'est ce qui rendait le bouton de réservation illisible à 2,28:1.
 - **Don't** utiliser Parisienne ailleurs que dans une amorce de titre.
 - **Don't** ajouter une quatrième famille de caractères.
 - **Don't** donner un rayon intermédiaire à un bouton : c'est une pilule complète ou rien.
-- **Don't** poser un bouton Sauge Poudrée ou Vert Sous-Bois sur une section sombre — c'est le rôle du bouton pâle.
+- **Don't** poser le bouton principal sur une section sombre — c'est le rôle du bouton pâle.
 - **Don't** ajouter un menu de navigation : l'en-tête ne porte qu'une action.
 - **Don't** reprendre quoi que ce soit du rose et nude de `v1.html`, qui est l'anti-référence de ce système.

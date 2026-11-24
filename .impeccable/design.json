@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-24T09:14:12Z",
+  "generatedAt": "2026-11-24T09:49:37Z",
   "title": "Design System: Ongle Sauvage",
   "extensions": {
     "colorMeta": {
@@ -20,7 +20,7 @@
         ]
       },
       "sauge-poudree": {
-        "role": "primary",
+        "role": "secondary",
         "displayName": "Sauge Poudrée",
         "canonical": "oklch(73.9% 0.056 123.8)",
         "tonalRamp": [
@@ -32,21 +32,6 @@
           "oklch(72.1% 0.056 123.8)",
           "oklch(83.6% 0.038 123.8)",
           "oklch(95.0% 0.012 123.8)"
-        ]
-      },
-      "sauge-brumeuse": {
-        "role": "secondary",
-        "displayName": "Sauge Brumeuse",
-        "canonical": "oklch(70.0% 0.044 142.9)",
-        "tonalRamp": [
-          "oklch(15.0% 0.025 142.9)",
-          "oklch(26.4% 0.040 142.9)",
-          "oklch(37.9% 0.044 142.9)",
-          "oklch(49.3% 0.044 142.9)",
-          "oklch(60.7% 0.044 142.9)",
-          "oklch(72.1% 0.042 142.9)",
-          "oklch(83.6% 0.027 142.9)",
-          "oklch(95.0% 0.009 142.9)"
         ]
       },
       "eucalyptus-clair": {
@@ -153,6 +138,36 @@
           "oklch(83.6% 0.000 89.9)",
           "oklch(95.0% 0.000 89.9)"
         ]
+      },
+      "sauge-intermediaire": {
+        "role": "secondary",
+        "displayName": "Sauge Intermédiaire",
+        "canonical": "oklch(60.8% 0.069 124.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.033 124.9)",
+          "oklch(26.4% 0.054 124.9)",
+          "oklch(37.9% 0.068 124.9)",
+          "oklch(49.3% 0.069 124.9)",
+          "oklch(60.7% 0.069 124.9)",
+          "oklch(72.1% 0.056 124.9)",
+          "oklch(83.6% 0.036 124.9)",
+          "oklch(95.0% 0.011 124.9)"
+        ]
+      },
+      "sauge-profonde": {
+        "role": "primary",
+        "displayName": "Sauge Profonde",
+        "canonical": "oklch(43.5% 0.047 125.2)",
+        "tonalRamp": [
+          "oklch(15.0% 0.022 125.2)",
+          "oklch(26.4% 0.036 125.2)",
+          "oklch(37.9% 0.045 125.2)",
+          "oklch(49.3% 0.047 125.2)",
+          "oklch(60.7% 0.046 125.2)",
+          "oklch(72.1% 0.037 125.2)",
+          "oklch(83.6% 0.024 125.2)",
+          "oklch(95.0% 0.008 125.2)"
+        ]
       }
     },
     "typographyMeta": {
@@ -227,36 +242,16 @@
       "shell": "1180px",
       "gutter": "24px",
       "block": "clamp(58px, 7vw, 110px)"
-    },
-    "unusedTokens": [
-      {
-        "name": "--moss",
-        "value": "#4a5d23",
-        "note": "Déclarée dans :root, utilisée zéro fois. À ne pas réveiller."
-      },
-      {
-        "name": "--mint",
-        "value": "#c8dcc2",
-        "note": "Déclarée dans :root, utilisée zéro fois. À ne pas réveiller."
-      }
-    ]
+    }
   },
   "components": [
     {
       "name": "Bouton principal",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "L'appel à la réservation. Présent dans l'en-tête, le héros, les prestations et le pied de page.",
+      "description": "L'appel à la réservation, l'objet le plus sombre de la page. Présent dans l'en-tête, le héros, les prestations et le pied.",
       "html": "<a class=\"ds-btn ds-btn-sage\" href=\"#\">Réserver sur Booksy</a>",
-      "css": ".ds-btn{display:inline-block;text-decoration:none;border:none;cursor:pointer;border-radius:999px;padding:15px 30px;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:.14em;transition:background .18s,color .18s,border-color .18s}.ds-btn:focus-visible{outline:2px solid var(--dusty, #8fa68d);outline-offset:3px}.ds-btn-sage{background:var(--sage, #a3b18a);color:#fff}.ds-btn-sage:hover{background:var(--forest, #2e4d34);color:#fff}"
-    },
-    {
-      "name": "Bouton sous-bois",
-      "kind": "button",
-      "refersTo": "button-forest",
-      "description": "L'appel secondaire sur fond clair.",
-      "html": "<a class=\"ds-btn ds-btn-forest\" href=\"#\">Voir tous les tarifs</a>",
-      "css": ".ds-btn{display:inline-block;text-decoration:none;border:none;cursor:pointer;border-radius:999px;padding:15px 30px;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:.14em;transition:background .18s,color .18s,border-color .18s}.ds-btn:focus-visible{outline:2px solid var(--dusty, #8fa68d);outline-offset:3px}.ds-btn-forest{background:var(--forest, #2e4d34);color:var(--cream, #f6f2e8)}.ds-btn-forest:hover{background:var(--sage, #a3b18a);color:#fff}"
+      "css": ".ds-btn{display:inline-block;text-decoration:none;border:none;cursor:pointer;border-radius:999px;padding:15px 30px;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:.14em;transition:background .18s,color .18s,border-color .18s}.ds-btn:focus-visible{outline:2px solid var(--forest, #2e4d34);outline-offset:3px}.ds-btn-sage{background:var(--forest, #2e4d34);color:var(--cream, #f6f2e8)}.ds-btn-sage:hover{background:var(--sage-deep, #4b5639);color:var(--cream, #f6f2e8)}"
     },
     {
       "name": "Bouton pâle",
@@ -264,7 +259,7 @@
       "refersTo": "button-pale",
       "description": "Le seul bouton autorisé sur une section sombre, où les deux autres disparaîtraient.",
       "html": "<a class=\"ds-btn ds-btn-pale\" href=\"#\">Parler de votre projet</a>",
-      "css": ".ds-btn{display:inline-block;text-decoration:none;border:none;cursor:pointer;border-radius:999px;padding:15px 30px;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:.14em;transition:background .18s,color .18s,border-color .18s}.ds-btn:focus-visible{outline:2px solid var(--dusty, #8fa68d);outline-offset:3px}.ds-btn-pale{background:var(--seafoam, #e4f1e0);color:var(--forest, #2e4d34)}.ds-btn-pale:hover{background:#fff}"
+      "css": ".ds-btn{display:inline-block;text-decoration:none;border:none;cursor:pointer;border-radius:999px;padding:15px 30px;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:.14em;transition:background .18s,color .18s,border-color .18s}.ds-btn:focus-visible{outline:2px solid var(--forest, #2e4d34);outline-offset:3px}.ds-btn-pale{background:var(--seafoam, #e4f1e0);color:var(--forest, #2e4d34)}.ds-btn-pale:hover{background:#fff}"
     },
     {
       "name": "Bouton fantôme",
@@ -272,7 +267,7 @@
       "refersTo": "button-ghost",
       "description": "Le second choix d'une paire : filet d'un pixel, aucun fond.",
       "html": "<a class=\"ds-btn ds-btn-ghost\" href=\"#\">Voir le nail art</a>",
-      "css": ".ds-btn{display:inline-block;text-decoration:none;border:none;cursor:pointer;border-radius:999px;padding:15px 30px;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:.14em;transition:background .18s,color .18s,border-color .18s}.ds-btn:focus-visible{outline:2px solid var(--dusty, #8fa68d);outline-offset:3px}.ds-btn-ghost{background:transparent;color:var(--ink, #33402f);border:1px solid rgba(51,64,47,.22);padding:14px 28px}.ds-btn-ghost:hover{border-color:var(--forest, #2e4d34);background:rgba(255,255,255,.5)}"
+      "css": ".ds-btn{display:inline-block;text-decoration:none;border:none;cursor:pointer;border-radius:999px;padding:15px 30px;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:.14em;transition:background .18s,color .18s,border-color .18s}.ds-btn:focus-visible{outline:2px solid var(--forest, #2e4d34);outline-offset:3px}.ds-btn-ghost{background:transparent;color:var(--ink, #33402f);border:1px solid rgba(51,64,47,.22);padding:14px 28px}.ds-btn-ghost:hover{border-color:var(--forest, #2e4d34);background:rgba(255,255,255,.5)}"
     },
     {
       "name": "Puce",
@@ -312,15 +307,15 @@
       "refersTo": "rail-button",
       "description": "Les deux flèches qui pilotent un carrousel. Elles tombent à 30 % d'opacité quand le rail est au bout.",
       "html": "<div class=\"ds-rail-nav\"><button class=\"ds-rail-btn\" aria-label=\"Précédent\">&#8592;</button><button class=\"ds-rail-btn\" aria-label=\"Suivant\">&#8594;</button><button class=\"ds-rail-btn\" disabled aria-label=\"Fin du rail\">&#8594;</button></div>",
-      "css": ".ds-rail-nav{display:flex;gap:10px}.ds-rail-btn{width:44px;height:44px;border-radius:999px;cursor:pointer;background:transparent;border:1px solid rgba(46,77,52,.35);color:var(--forest, #2e4d34);font-size:17px;line-height:1;display:grid;place-items:center;transition:background .18s,border-color .18s,opacity .18s}.ds-rail-btn:hover{background:var(--cream, #f6f2e8);border-color:var(--forest, #2e4d34)}.ds-rail-btn:focus-visible{outline:2px solid var(--dusty, #8fa68d);outline-offset:3px}.ds-rail-btn[disabled]{opacity:.3;cursor:default}.ds-rail-btn[disabled]:hover{background:transparent;border-color:rgba(46,77,52,.35)}"
+      "css": ".ds-rail-nav{display:flex;gap:10px}.ds-rail-btn{width:44px;height:44px;border-radius:999px;cursor:pointer;background:transparent;border:1px solid rgba(46,77,52,.35);color:var(--forest, #2e4d34);font-size:17px;line-height:1;display:grid;place-items:center;transition:background .18s,border-color .18s,opacity .18s}.ds-rail-btn:hover{background:var(--cream, #f6f2e8);border-color:var(--forest, #2e4d34)}.ds-rail-btn:focus-visible{outline:2px solid var(--forest, #2e4d34);outline-offset:3px}.ds-rail-btn[disabled]{opacity:.3;cursor:default}.ds-rail-btn[disabled]:hover{background:transparent;border-color:rgba(46,77,52,.35)}"
     },
     {
       "name": "Carte des horaires",
       "kind": "custom",
       "refersTo": "card-hours",
-      "description": "La grande arche pleine en Sauge Poudrée qui porte les horaires, avec des filets blancs translucides entre les lignes.",
+      "description": "La grande arche pleine en Vert Sous-Bois qui porte les horaires, avec des filets crème translucides entre les lignes.",
       "html": "<div class=\"ds-hours\"><span class=\"ds-script\">horaires</span><h2>&amp; accès</h2><ul class=\"ds-hours-list\"><li><span>Lundi – vendredi</span><span>09:00 – 19:00</span></li><li><span>Samedi – dimanche</span><span>Fermé</span></li></ul></div>",
-      "css": ".ds-hours{background:var(--sage, #a3b18a);color:#fff;border-radius:240px 240px 26px 26px;padding:56px 34px 36px;text-align:center;max-width:400px;font-family:'Jost',system-ui,sans-serif}.ds-hours .ds-script{font-family:'Parisienne',cursive;color:rgba(255,255,255,.82);font-size:34px;display:block;line-height:1.1;margin-bottom:-.2em}.ds-hours h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:28px;text-transform:uppercase;letter-spacing:.14em;color:#fff;margin:0}.ds-hours-list{margin:26px 0 0;padding:0;list-style:none}.ds-hours-list li{display:flex;justify-content:space-between;gap:14px;padding:11px 0;font-size:14px;font-weight:300;letter-spacing:.04em;border-top:1px solid rgba(255,255,255,.24)}.ds-hours-list li:last-child{border-bottom:1px solid rgba(255,255,255,.24)}.ds-hours-list span:first-child{text-transform:uppercase;letter-spacing:.12em;font-size:12px;padding-top:2px}"
+      "css": ".ds-hours{background:var(--forest, #2e4d34);color:var(--cream, #f6f2e8);border-radius:240px 240px 26px 26px;padding:56px 34px 36px;text-align:center;max-width:400px;font-family:'Jost',system-ui,sans-serif}.ds-hours .ds-script{font-family:'Parisienne',cursive;color:rgba(255,255,255,.82);font-size:34px;display:block;line-height:1.1;margin-bottom:-.2em}.ds-hours h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:28px;text-transform:uppercase;letter-spacing:.14em;color:#fff;margin:0}.ds-hours-list{margin:26px 0 0;padding:0;list-style:none}.ds-hours-list li{display:flex;justify-content:space-between;gap:14px;padding:11px 0;font-size:14px;font-weight:300;letter-spacing:.04em;border-top:1px solid rgba(255,255,255,.24)}.ds-hours-list li:last-child{border-bottom:1px solid rgba(255,255,255,.24)}.ds-hours-list span:first-child{text-transform:uppercase;letter-spacing:.12em;font-size:12px;padding-top:2px}"
     }
   ],
   "narrative": {
@@ -383,6 +378,16 @@
         "name": "La règle de la pilule",
         "section": "shapes",
         "body": "Ce qui se clique est une pilule complète. Un rayon intermédiaire sur un bouton n'existe pas dans ce système."
+      },
+      {
+        "name": "La règle du plancher lisible",
+        "section": "colors",
+        "body": "Tout texte atteint 4,5:1, tout grand texte 3:1, et tout contrôle dont la bordure est le seul indice atteint 3:1. Un besoin esthétique de pâleur ne se paie pas sur un texte : il se paie sur une surface décorative, qui n'en porte pas."
+      },
+      {
+        "name": "La règle du grand texte",
+        "section": "typography",
+        "body": "L'amorce manuscrite ne descend jamais sous 24px, parce que c'est le seuil à partir duquel un texte a droit au plancher de contraste de 3:1. Sa taille est une contrainte d'accessibilité, pas un choix de composition."
       }
     ],
     "dos": [
@@ -396,11 +401,12 @@
     ],
     "donts": [
       "Don't mettre une ombre sous une carte, une photo ou l'en-tête. La profondeur passe par la couleur.",
-      "Don't introduire une couleur hors palette végétale, ni réveiller --moss (#4a5d23) et --mint (#c8dcc2), qui sont déclarées mais inutilisées.",
+      "Don't introduire une couleur hors palette végétale. --moss et --mint, déclarées et jamais utilisées, ont été retirées de :root ; ne les y remettez pas.",
+      "Don't poser du texte sur Sauge Poudrée, ni du blanc sur une sauge quelconque. C'est ce qui rendait le bouton de réservation illisible à 2,28:1.",
       "Don't utiliser Parisienne ailleurs que dans une amorce de titre.",
       "Don't ajouter une quatrième famille de caractères.",
       "Don't donner un rayon intermédiaire à un bouton : c'est une pilule complète ou rien.",
-      "Don't poser un bouton Sauge Poudrée ou Vert Sous-Bois sur une section sombre — c'est le rôle du bouton pâle.",
+      "Don't poser le bouton principal sur une section sombre — c'est le rôle du bouton pâle.",
       "Don't ajouter un menu de navigation : l'en-tête ne porte qu'une action.",
       "Don't reprendre quoi que ce soit du rose et nude de v1.html, qui est l'anti-référence de ce système."
     ]
