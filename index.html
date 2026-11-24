@@ -141,7 +141,7 @@
     .topbar-inner{flex-wrap:nowrap;gap:10px;padding:10px 16px}
     .brand{font-size:16px;gap:8px;letter-spacing:.12em}
     .brand img{width:28px;height:28px}
-    .nav-cta .btn{padding:10px 14px;font-size:10px;letter-spacing:.1em;white-space:nowrap}
+    .nav-cta .btn{padding:10px 14px;font-size:11px;letter-spacing:.1em;white-space:nowrap}
   }
 
   /* Héro */
@@ -164,11 +164,10 @@
     font-family:'Parisienne',cursive;color:var(--sage-mid);
     font-size:clamp(24px,3.4vw,42px);line-height:1.15;margin:-.08em 0 0;
   }
-  .hero-tag{
-    display:inline-block;margin-top:22px;
-    background:#fff;color:var(--ink);border:1px solid rgba(51,64,47,.08);
-    border-radius:999px;
-    padding:9px 26px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+  .hero-chips{justify-content:center;margin-top:20px}
+  .hero-note{
+    margin:14px 0 0;font-size:12.5px;letter-spacing:.04em;
+    color:rgba(51,64,47,.78);font-weight:300;
   }
   .hero .lede{margin:22px auto 0;max-width:36ch;font-size:clamp(15px,1.4vw,17.5px)}
   .hero-place{
@@ -455,7 +454,7 @@
       <img src="assets/logo.jpg" alt="" width="34" height="34">Ongle Sauvage
     </a>
     <div class="nav-cta">
-      <a class="btn btn-forest" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener">Rendez-vous</a>
+      <a class="btn btn-forest" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener" aria-label="Réserver sur Booksy (nouvel onglet)">Réserver ↗</a>
     </div>
   </div>
 </header>
@@ -487,13 +486,19 @@
       <h1>Ongle<br>
       Sauvage</h1>
       <p class="script-lead">le nail art qui vous ressemble</p>
-      <div class="hero-tag">Nail art · Gel · Gel X · Soin</div>
+      <div class="chips hero-chips">
+        <span class="chip">Nail art</span>
+        <span class="chip">Gel</span>
+        <span class="chip">Gel X</span>
+        <span class="chip">Soin</span>
+      </div>
       <p class="lede">Créations uniques, dessinées à la main ongle&nbsp;par&nbsp;ongle.</p>
       <p class="hero-place">Castets et Castillon · Sud-Gironde</p>
       <div class="btn-row">
-        <a class="btn btn-forest" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener">Réserver sur Booksy</a>
+        <a class="btn btn-forest" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener" aria-label="Réserver sur Booksy (nouvel onglet)">Réserver sur Booksy ↗</a>
         <a class="btn btn-ghost" href="#nailart">Voir le nail art</a>
       </div>
+      <p class="hero-note">Disponibilités en direct · tarifs et durées sur Booksy</p>
       <div class="hero-strip">
         <div class="arch">
           <img src="assets/nailart-ambre-perles.jpg" alt="Nail art ambre et doré, reliefs dorés et perles" loading="lazy">
@@ -543,7 +548,7 @@
           <span class="chip chip-dark">Strass &amp; reliefs</span>
           <span class="chip chip-dark">Stickers faits main</span>
         </div>
-        <a class="btn btn-pale" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener">Parler de votre projet</a>
+        <a class="btn btn-pale" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener" aria-label="Réserver un nail art sur mesure (nouvel onglet)">Réserver un nail art sur mesure ↗</a>
       </div>
       <div class="duo">
         <div class="arch">
@@ -560,7 +565,7 @@
     <div class="shell">
       <div class="gallery-head">
         <h2>Mes réalisations</h2>
-        <a href="https://www.instagram.com/ongle_sauvage/" target="_blank" rel="noopener">Plus de photos sur Instagram</a>
+        <a href="https://www.instagram.com/ongle_sauvage/" target="_blank" rel="noopener" aria-label="Plus de photos sur Instagram (nouvel onglet)">Plus de photos sur Instagram ↗</a>
       </div>
       <div class="gallery-rail rail-scroll" id="galerieRail" tabindex="0" role="group" aria-label="Mes réalisations, défilement horizontal">
         <div class="arch">
@@ -685,7 +690,7 @@
         </div>
       </div>
       <div class="center">
-        <a class="btn btn-forest" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener">Voir tous les tarifs et réserver</a>
+        <a class="btn btn-forest" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener" aria-label="Réserver sur Booksy (nouvel onglet)">Réserver sur Booksy ↗</a>
       </div>
     </div>
   </section>
@@ -725,7 +730,7 @@
           </li>
         </ul>
         <div class="btn-row">
-          <a class="btn btn-ghost" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener">Voir les disponibilités</a>
+          <a class="btn btn-ghost" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener" aria-label="Voir les disponibilités sur Booksy (nouvel onglet)">Voir les disponibilités ↗</a>
         </div>
       </div>
     </div>
@@ -734,10 +739,10 @@
   <section class="section reviews">
     <div class="shell">
       <div class="reviews-head">
-        <h2>Elles en parlent</h2>
+        <h2>Ce qu'on en dit</h2>
         <div class="reviews-score">★ <span data-avis-rating>5,0</span> sur <span data-avis-count>18</span> avis Booksy</div>
       </div>
-      <div class="reviews-rail rail-scroll" id="reviewsRail" tabindex="0" role="group" aria-label="Avis clientes, défilement horizontal">
+      <div class="reviews-rail rail-scroll" id="reviewsRail" tabindex="0" role="group" aria-label="Avis de la clientèle, défilement horizontal">
         <!-- avis:start — cartes régénérées par .github/workflows/avis-booksy.yml, ne pas éditer à la main -->
         <article class="review">
           <div class="quote">&ldquo;</div>
@@ -795,7 +800,7 @@
         <!-- avis:end -->
       </div>
       <div class="rail-foot">
-        <div class="rail-hint">Faites défiler · <a href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets#reviews" target="_blank" rel="noopener">les <span data-avis-count>18</span> avis sur Booksy ↗</a></div>
+        <div class="rail-hint">Faites défiler · <a href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets#reviews" target="_blank" rel="noopener" aria-label="Lire tous les avis sur Booksy (nouvel onglet)">les <span data-avis-count>18</span> avis sur Booksy ↗</a></div>
         <div class="rail-nav">
           <button class="rail-btn" type="button" data-rail="prev" data-target="reviewsRail" aria-label="Avis précédents">&#8592;</button>
           <button class="rail-btn" type="button" data-rail="next" data-target="reviewsRail" aria-label="Avis suivants">&#8594;</button>
@@ -832,9 +837,9 @@
   <section class="section social">
     <div class="shell">
       <h2><span class="script">suivez le travail</span>
-      <a href="https://www.instagram.com/ongle_sauvage/" target="_blank" rel="noopener">@ongle_sauvage</a></h2>
+      <a href="https://www.instagram.com/ongle_sauvage/" target="_blank" rel="noopener" aria-label="Le compte Instagram @ongle_sauvage (nouvel onglet)">@ongle_sauvage</a></h2>
       <p>Les nouvelles créations, les projets en cours et les disponibilités de dernière minute y passent en premier.</p>
-      <a class="btn btn-forest" href="https://www.instagram.com/ongle_sauvage/" target="_blank" rel="noopener">Voir le compte Instagram</a>
+      <a class="btn btn-forest" href="https://www.instagram.com/ongle_sauvage/" target="_blank" rel="noopener" aria-label="Voir le compte Instagram (nouvel onglet)">Voir le compte Instagram ↗</a>
     </div>
   </section>
 </main>
@@ -857,9 +862,9 @@
         <div class="footer-value"><a class="footer-tel" href="tel:+33781855770">07 81 85 57 70</a></div>
       </div>
       <div class="footer-actions">
-        <a class="btn btn-pale" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener">Réserver sur Booksy</a>
-        <a class="footer-link" href="https://www.instagram.com/ongle_sauvage/" target="_blank" rel="noopener">Instagram ↗</a>
-        <a class="footer-link" href="https://www.facebook.com/share/1AzJnumA5m/" target="_blank" rel="noopener">Facebook ↗</a>
+        <a class="btn btn-pale" href="https://booksy.com/fr-fr/62614_ongle-sauvage_onglerie_80506_castillon-de-castets" target="_blank" rel="noopener" aria-label="Réserver sur Booksy (nouvel onglet)">Réserver sur Booksy ↗</a>
+        <a class="footer-link" href="https://www.instagram.com/ongle_sauvage/" target="_blank" rel="noopener" aria-label="Instagram (nouvel onglet)">Instagram ↗</a>
+        <a class="footer-link" href="https://www.facebook.com/share/1AzJnumA5m/" target="_blank" rel="noopener" aria-label="Facebook (nouvel onglet)">Facebook ↗</a>
       </div>
     </div>
     <div class="footer-bottom">
