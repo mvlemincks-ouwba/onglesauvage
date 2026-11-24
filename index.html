@@ -258,7 +258,7 @@
   }
   @media (max-width:600px){
     .gallery-rail .arch{border-radius:999px 999px 18px 18px}
-    .arch-label{font-size:10px;letter-spacing:.1em;padding:6px 11px;bottom:9px}
+    .arch-label{font-size:11px;letter-spacing:.1em;padding:6px 11px;bottom:9px}
   }
 
   /* Prestations */
@@ -373,7 +373,8 @@
   .review-service{margin-top:3px;font-size:12px;letter-spacing:.1em;color:rgba(51,64,47,.78)}
   /* Retour en haut de page */
   .to-top{
-    position:fixed;right:clamp(14px,2.5vw,26px);bottom:clamp(14px,2.5vw,26px);z-index:40;
+    position:fixed;right:clamp(14px,2.5vw,26px);z-index:40;
+    bottom:calc(clamp(14px,2.5vw,26px) + env(safe-area-inset-bottom, 0px));
     width:50px;height:50px;border-radius:999px;
     display:grid;place-items:center;text-decoration:none;
     background:var(--forest);color:var(--cream);font-size:20px;line-height:1;
@@ -436,6 +437,32 @@
     display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
     padding-top:22px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,242,232,.72);
   }
+  /* Saisie tactile : 44px de cible minimum. On vise le mode de saisie et non la
+     largeur, parce qu'un portable a ecran tactile en a autant besoin qu'un
+     telephone. Les liens en ligne gagnent leur zone par pseudo-element : la
+     cible grandit, le soulignement et la mise en page ne bougent pas. */
+  @media (pointer:coarse){
+    .nav-cta .btn{min-height:44px;display:inline-flex;align-items:center}
+    .faq summary{padding:9px 0}
+    .social h2 a{display:inline-block;padding:8px 0}
+    .footer-actions{gap:26px}
+
+    .gallery-head a,
+    .rail-hint a,
+    .info-list .value a,
+    .footer-value a,
+    .footer-link{position:relative}
+
+    .gallery-head a::after,
+    .rail-hint a::after,
+    .info-list .value a::after,
+    .footer-value a::after,
+    .footer-link::after{
+      content:'';position:absolute;left:0;right:0;top:50%;
+      height:44px;transform:translateY(-50%);
+    }
+  }
+
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     *{transition:none !important}
