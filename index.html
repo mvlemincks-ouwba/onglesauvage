@@ -350,7 +350,15 @@
     background:var(--cream);border-radius:160px 160px 24px 24px;
     padding:44px 30px 30px;text-align:center;
     display:flex;flex-direction:column;justify-content:center;
+    /* Le texte des avis vient de Booksy, donc de personne qu'on contrôle. Un
+       mot insécable — une URL collée, un prénom sans espace, des lettres
+       répétées — tenait la carte à sa largeur minimale de contenu, et comme
+       flex-shrink vaut 0 elle s'élargissait au lieu de rétrécir : mesuré
+       jusqu'à 509px au lieu de 252px, ce qui rompait le rythme du rail et
+       faussait le pas des flèches, calculé sur la première carte. */
+    min-width:0;
   }
+  .review p, .review-name, .review-service{overflow-wrap:anywhere}
   .rail-foot{
     display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
     gap:14px;margin-top:18px;
