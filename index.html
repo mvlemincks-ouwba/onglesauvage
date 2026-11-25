@@ -381,6 +381,13 @@
     color:rgba(51,64,47,.82);text-wrap:pretty;
     display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden;
   }
+  .review p.deplie{display:block;overflow:visible}
+  .review-suite{
+    align-self:center;margin:12px 0 0;padding:8px 0;
+    background:none;border:0;border-bottom:1px solid rgba(46,77,52,.3);
+    font-family:inherit;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--forest);cursor:pointer;
+  }
   .review-name{
     margin-top:20px;font-family:'Cormorant Garamond',serif;font-size:18px;
     text-transform:uppercase;letter-spacing:.14em;color:var(--forest);
@@ -463,6 +470,7 @@
      cible grandit, le soulignement et la mise en page ne bougent pas. */
   @media (pointer:coarse){
     .nav-cta .btn{min-height:44px;display:inline-flex;align-items:center}
+    .review-suite{min-height:44px}
     .faq summary{padding:9px 0}
     .social h2 a{display:inline-block;padding:8px 0}
     .footer-actions{gap:26px}
@@ -1179,6 +1187,59 @@
       window.scrollTo({top: 0, behavior: 'smooth'});
     });
     maj();
+  })();
+
+  // Les avis sont coupés à six lignes. Aucun des neuf servis aujourd'hui ne
+  // dépasse, mais quatre remplissent exactement ces six lignes sur une carte
+  // étroite, et le bloc est réécrit chaque matin depuis Booksy : le premier
+  // avis un peu plus long serait tronqué en silence. Le bouton se pose donc
+  // ici, sur le rendu, et non dans le HTML — tout ce qui est entre les
+  // repères avis:start et avis:end est écrasé par le script quotidien. Il
+  // n'apparaît que si le texte est réellement coupé, donc aujourd'hui il ne
+  // s'affiche pas. Sans JavaScript, l'avis reste coupé comme avant, et le
+  // lien vers Booksy mène toujours au texte entier.
+  (function(){
+    var textes = [].slice.call(document.querySelectorAll('.review p'));
+    if(!textes.length) return;
+
+    function coupe(p){ return p.scrollHeight > p.clientHeight + 1; }
+
+    function bouton(p, i){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'review-suite';
+      b.textContent = 'Lire la suite';
+      if(!p.id) p.id = 'avis-texte-' + i;
+      b.setAttribute('aria-controls', p.id);
+      b.setAttribute('aria-expanded', 'false');
+      b.addEventListener('click', function(){
+        var ouvert = p.classList.toggle('deplie');
+        b.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+        b.textContent = ouvert ? 'Réduire' : 'Lire la suite';
+      });
+      return b;
+    }
+
+    function maj(){
+      textes.forEach(function(p, i){
+        if(p.classList.contains('deplie')) return;   // déjà ouvert : rien à décider
+        var suivant = p.nextElementSibling;
+        var dejaLa = suivant && suivant.classList.contains('review-suite');
+        if(coupe(p) && !dejaLa) p.insertAdjacentElement('afterend', bouton(p, i));
+        else if(!coupe(p) && dejaLa) suivant.remove();
+      });
+    }
+
+    // Les polices arrivent en display:swap : mesurer avant leur chargement
+    // compterait les lignes de la police de secours, pas celles de Jost.
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(maj);
+    else maj();
+
+    // La largeur de carte suit le viewport, donc le nombre de lignes aussi.
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t); t = setTimeout(maj, 200);
+    });
   })();
 </script>
 
