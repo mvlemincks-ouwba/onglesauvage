@@ -685,7 +685,7 @@
         </div>
       </div>
       <div class="rail-foot">
-        <div class="rail-hint">16 réalisations · faites défiler</div>
+        <div class="rail-hint"><span data-galerie-count></span>Faites défiler</div>
         <div class="rail-nav">
           <button class="rail-btn" type="button" data-rail="prev" data-target="galerieRail" aria-label="Réalisations précédentes">&#8592;</button>
           <button class="rail-btn" type="button" data-rail="next" data-target="galerieRail" aria-label="Réalisations suivantes">&#8594;</button>
@@ -1187,6 +1187,17 @@
       window.scrollTo({top: 0, behavior: 'smooth'});
     });
     maj();
+  })();
+
+  // Le nombre de réalisations se lit sur le rail, il ne s'écrit pas à la main :
+  // il mentait dès qu'une photo était ajoutée. Sans JavaScript la mention
+  // disparaît plutôt que de se tromper, et « faites défiler » suffit.
+  (function(){
+    var cible = document.querySelector('[data-galerie-count]');
+    var rail = document.getElementById('galerieRail');
+    if(!cible || !rail) return;
+    var n = rail.querySelectorAll('img').length;
+    if(n > 1) cible.textContent = n + ' réalisations · ';
   })();
 
   // Les avis sont coupés à six lignes. Aucun des neuf servis aujourd'hui ne
